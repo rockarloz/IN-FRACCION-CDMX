@@ -14,6 +14,13 @@
 		F35034F81AAC225D0084939C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F35034F71AAC225D0084939C /* Images.xcassets */; };
 		F35034FB1AAC225D0084939C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35034F91AAC225D0084939C /* LaunchScreen.xib */; };
 		F35035071AAC225D0084939C /* FRACCION_CDMXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F35035061AAC225D0084939C /* FRACCION_CDMXTests.m */; };
+		F35035111AAC23770084939C /* acerca_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = F35035101AAC23770084939C /* acerca_btn.png */; };
+		F35035131AAC23F60084939C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F35035121AAC23F60084939C /* logo.png */; };
+		F35035151AAC23FE0084939C /* bg_carretera.png in Resources */ = {isa = PBXBuildFile; fileRef = F35035141AAC23FE0084939C /* bg_carretera.png */; };
+		F35035171AAC24B60084939C /* cdmx_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F35035161AAC24B60084939C /* cdmx_logo.png */; };
+		F35035191AAC250F0084939C /* bg_portada.png in Resources */ = {isa = PBXBuildFile; fileRef = F35035181AAC250F0084939C /* bg_portada.png */; };
+		F350351B1AAC29BD0084939C /* bg_top_internas.png in Resources */ = {isa = PBXBuildFile; fileRef = F350351A1AAC29BD0084939C /* bg_top_internas.png */; };
+		F350351D1AAC2A5C0084939C /* icon_car.png in Resources */ = {isa = PBXBuildFile; fileRef = F350351C1AAC2A5C0084939C /* icon_car.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,13 @@
 		F35035001AAC225D0084939C /* FRACCION-CDMXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FRACCION-CDMXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35035051AAC225D0084939C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F35035061AAC225D0084939C /* FRACCION_CDMXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRACCION_CDMXTests.m; sourceTree = "<group>"; };
+		F35035101AAC23770084939C /* acerca_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acerca_btn.png; sourceTree = "<group>"; };
+		F35035121AAC23F60084939C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		F35035141AAC23FE0084939C /* bg_carretera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_carretera.png; sourceTree = "<group>"; };
+		F35035161AAC24B60084939C /* cdmx_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cdmx_logo.png; sourceTree = "<group>"; };
+		F35035181AAC250F0084939C /* bg_portada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_portada.png; sourceTree = "<group>"; };
+		F350351A1AAC29BD0084939C /* bg_top_internas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_top_internas.png; sourceTree = "<group>"; };
+		F350351C1AAC2A5C0084939C /* icon_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_car.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,13 @@
 		F35034E91AAC225D0084939C /* FRACCION-CDMX */ = {
 			isa = PBXGroup;
 			children = (
+				F350351C1AAC2A5C0084939C /* icon_car.png */,
+				F35035101AAC23770084939C /* acerca_btn.png */,
+				F35035141AAC23FE0084939C /* bg_carretera.png */,
+				F350351A1AAC29BD0084939C /* bg_top_internas.png */,
+				F35035161AAC24B60084939C /* cdmx_logo.png */,
+				F35035121AAC23F60084939C /* logo.png */,
+				F35035181AAC250F0084939C /* bg_portada.png */,
 				F35034EE1AAC225D0084939C /* AppDelegate.h */,
 				F35034EF1AAC225D0084939C /* AppDelegate.m */,
 				F35034F11AAC225D0084939C /* ViewController.h */,
@@ -200,8 +221,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F35034F61AAC225D0084939C /* Main.storyboard in Resources */,
+				F350351D1AAC2A5C0084939C /* icon_car.png in Resources */,
+				F35035131AAC23F60084939C /* logo.png in Resources */,
+				F35035171AAC24B60084939C /* cdmx_logo.png in Resources */,
 				F35034FB1AAC225D0084939C /* LaunchScreen.xib in Resources */,
+				F35035191AAC250F0084939C /* bg_portada.png in Resources */,
 				F35034F81AAC225D0084939C /* Images.xcassets in Resources */,
+				F35035151AAC23FE0084939C /* bg_carretera.png in Resources */,
+				F350351B1AAC29BD0084939C /* bg_top_internas.png in Resources */,
+				F35035111AAC23770084939C /* acerca_btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
