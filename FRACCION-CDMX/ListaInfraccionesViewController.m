@@ -120,7 +120,7 @@
     
     InfractionDetailViewController *content ;//= [[PersonDetailViewController alloc] init];
     content = [[self storyboard] instantiateViewControllerWithIdentifier:@"detailinfraction"];
-    content.data=[principal objectAtIndex:indexPath.row];
+   // content.data=[principal objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:content animated:YES];
     
     //[self presentViewController:content animated:YES completion:nil];
