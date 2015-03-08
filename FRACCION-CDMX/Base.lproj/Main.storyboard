@@ -232,10 +232,10 @@
             </objects>
             <point key="canvasLocation" x="630.5" y="80.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Lista Infracciones View Controller-->
         <scene sceneID="o1R-G0-7KV">
             <objects>
-                <viewController id="MBd-jo-S64" sceneMemberID="viewController">
+                <viewController id="MBd-jo-S64" customClass="ListaInfraccionesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gjg-lR-s7O"/>
                         <viewControllerLayoutGuide type="bottom" id="scN-8o-rSf"/>
@@ -352,15 +352,22 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MBd-jo-S64" id="h4O-be-GgR"/>
+                                    <outlet property="delegate" destination="MBd-jo-S64" id="FBG-Zb-xLG"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.41960784309999999" green="0.90196078430000004" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tabla" destination="0cZ-5A-sQr" id="uc6-Q5-1ra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FD1-Jc-93v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="163.5" y="821.5"/>
+            <point key="canvasLocation" x="123.5" y="953.5"/>
         </scene>
         <!--Person Detail View Controller-->
         <scene sceneID="Ko8-2v-8eT">
@@ -447,12 +454,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTf-4R-0li" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553.5" y="821.5"/>
+            <point key="canvasLocation" x="560.5" y="920.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Infraction Detail View Controller-->
         <scene sceneID="7Jc-BI-qKn">
             <objects>
-                <viewController id="sMk-qI-BKu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailinfraction" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sMk-qI-BKu" customClass="InfractionDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PC7-H1-n6y"/>
                         <viewControllerLayoutGuide type="bottom" id="fnF-Jb-Exp"/>
