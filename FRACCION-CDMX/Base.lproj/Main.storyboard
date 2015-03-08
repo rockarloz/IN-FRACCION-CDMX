@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="123.5" y="69.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Lista Policias View Controller-->
         <scene sceneID="Y6M-LX-UEy">
             <objects>
-                <viewController id="kl5-p7-MZP" sceneMemberID="viewController">
+                <viewController id="kl5-p7-MZP" customClass="ListaPoliciasViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="frF-2b-nK0"/>
                         <viewControllerLayoutGuide type="bottom" id="GQM-Nl-IId"/>
@@ -205,6 +205,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="kl5-p7-MZP" id="l8k-be-rhg"/>
+                                    <outlet property="delegate" destination="kl5-p7-MZP" id="6tJ-Zb-4ZF"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.41960784309999999" green="0.90196078430000004" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,6 +216,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="3QY-rj-mVT" id="hCg-NR-6a6"/>
+                        <outlet property="tabla" destination="72D-eE-ht2" id="bsF-aL-M7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cj1-r6-nBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
