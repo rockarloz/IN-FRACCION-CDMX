@@ -7,7 +7,7 @@
 //
 
 #import "ListaPoliciasViewController.h"
-
+#import "PersonDetailViewController.h"
 @interface ListaPoliciasViewController ()
 
 @end
@@ -34,7 +34,7 @@
     /*  Codigo para llamada a backend      */
     /***************************************/
 
-    NSString *url =@"http://infracciones.herokuapp.com/infractions.json";
+    NSString *url =@"http://infracciones.herokuapp.com/cops.json";
     
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -70,6 +70,9 @@
         }
         
         else{
+            UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensajes" message:@"Por el momento no podemos conectarnos al servidor intenta mas tarde" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+            [a show];
+
             
         }
         
@@ -89,20 +92,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     NSMutableDictionary *a=[principal objectAtIndex:indexPath.row];
     [cell.textLabel setText: [a objectForKey:@"nombre"]];
-    
+  
     return cell;
 }
 #pragma mark - Table view Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-   // ContentViewController *content = [[ContentViewController alloc] init];
-    
-    // [self.navigationController pushViewController:content animated:YES];
+    PersonDetailViewController *content ;//= [[PersonDetailViewController alloc] init];
+     content = [[self storyboard] instantiateViewControllerWithIdentifier:@"detail"];
+    content.data=[principal objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:content animated:YES];
     
     //[self presentViewController:content animated:YES completion:nil];
     
