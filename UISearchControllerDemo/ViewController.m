@@ -18,13 +18,59 @@
 - (void)viewDidLoad {
      [super viewDidLoad];
     
-     UIButton* agentes = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    UIImageView *img=[[UIImageView alloc]initWithFrame:CGRectMake(25, 100,self.view.frame.size.width -50 , 60)];
+    img.image=[UIImage imageNamed:@"logo.png"];
+    [self.view addSubview:img];
+    
+    
+    UIView *a=[[UIView alloc]initWithFrame:CGRectMake(50, self.view.frame.size.height/2 -100, self.view.frame.size.width-100, 100)];
+    a.backgroundColor=[UIColor whiteColor];
+    [self.view addSubview:a];
+    UILabel *lbl1=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, a.frame.size.width, 35)];
+    lbl1.text=@"¿Te puede infraccionar?";
+    lbl1.textAlignment=NSTextAlignmentCenter;
+    [a addSubview:lbl1];
+    UIView *linea1=[[UIView alloc]initWithFrame:CGRectMake(10, 36, a.frame.size.width-20, 3)];
+    linea1.backgroundColor=[UIColor yellowColor];
+    [a addSubview:linea1];
+    
+    
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(infracciones)];
+    [a addGestureRecognizer:singleFingerTap];
+    
+    UIView *b=[[UIView alloc]initWithFrame:CGRectMake(50, self.view.frame.size.height/2 +100, self.view.frame.size.width-100, 100)];
+    b.backgroundColor=[UIColor whiteColor];
+    
+    [self.view addSubview:b];
+    
+    
+    
+    UILabel *lbl2=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, a.frame.size.width, 35)];
+    lbl2.text=@"Consulta tu infracción";
+    lbl2.textAlignment=NSTextAlignmentCenter;
+    [b addSubview:lbl2];
+    UIView *linea2=[[UIView alloc]initWithFrame:CGRectMake(10, 36, a.frame.size.width-20, 3)];
+    linea2.backgroundColor=[UIColor yellowColor];
+    [b addSubview:linea2];
+
+    
+    
+    
+    
+    UIButton* agentes = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [agentes addTarget:self
                  action:@selector(goToAgentes:)
        forControlEvents:UIControlEventTouchUpInside];
     [agentes setTitle:@"¿Te puede infraccionar?" forState:UIControlStateNormal];
     agentes.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
-    [self.view addSubview:agentes];
+   // [self.view addSubview:agentes];
+    
+    
+    
     
     UIButton* conceptos = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [conceptos addTarget:self
@@ -32,7 +78,8 @@
       forControlEvents:UIControlEventTouchUpInside];
     [conceptos setTitle:@"revisa tu infraccion" forState:UIControlStateNormal];
     conceptos.frame = CGRectMake(80.0, 100.0, 160.0, 40.0);
-    [self.view addSubview:conceptos];
+   // [self.view addSubview:conceptos];
+    self.view.backgroundColor=[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
     // Do any additional setup after loading the view.
 }
 
@@ -56,6 +103,20 @@
    
     
     AirlineTableViewController *list=[storyboard instantiateViewControllerWithIdentifier:@"Airline"];    [self.navigationController pushViewController:list animated:YES];
+}
+
+-(void)infracciones{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+     AirlineTableViewController *list=[storyboard instantiateViewControllerWithIdentifier:@"Airline"];
+    [self.navigationController pushViewController:list animated:NO];
+
+}
+
+-(void)agentes{
+    
+    
+    
 }
 /*
 #pragma mark - Navigation

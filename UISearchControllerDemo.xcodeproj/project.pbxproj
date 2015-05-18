@@ -22,6 +22,8 @@
 		F3EE128C1B01BBA800CDEC6A /* puede.png in Resources */ = {isa = PBXBuildFile; fileRef = F3EE128A1B01BBA800CDEC6A /* puede.png */; };
 		F3EE128F1B01C50F00CDEC6A /* ConceptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */; };
 		F3EE12941B03E10800CDEC6A /* ConceptosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */; };
+		F3EE12961B0681EB00CDEC6A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F3EE12951B0681EB00CDEC6A /* logo.png */; };
+		F3EE12991B06856C00CDEC6A /* AgenteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12981B06856C00CDEC6A /* AgenteTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptsViewController.m; sourceTree = "<group>"; };
 		F3EE12921B03E10800CDEC6A /* ConceptosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptosTableViewController.h; sourceTree = "<group>"; };
 		F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptosTableViewController.m; sourceTree = "<group>"; };
+		F3EE12951B0681EB00CDEC6A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		F3EE12971B06856C00CDEC6A /* AgenteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgenteTableViewCell.h; sourceTree = "<group>"; };
+		F3EE12981B06856C00CDEC6A /* AgenteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgenteTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,8 @@
 		31433F7B1A6580E200E3420B = {
 			isa = PBXGroup;
 			children = (
+				F3EE12971B06856C00CDEC6A /* AgenteTableViewCell.h */,
+				F3EE12981B06856C00CDEC6A /* AgenteTableViewCell.m */,
 				31433F861A6580E200E3420B /* UISearchControllerDemo */,
 				31433FA01A6580E200E3420B /* UISearchControllerDemoTests */,
 				31433F851A6580E200E3420B /* Products */,
@@ -104,12 +111,12 @@
 				F3EE12871B01BACF00CDEC6A /* df.jpg */,
 				31433F8B1A6580E200E3420B /* AppDelegate.h */,
 				31433F8C1A6580E200E3420B /* AppDelegate.m */,
+				F3EE128A1B01BBA800CDEC6A /* puede.png */,
 				31433FAF1A65837200E3420B /* AirlineTableViewController.h */,
 				31433FB01A65837200E3420B /* AirlineTableViewController.m */,
 				31433FB21A658BFF00E3420B /* SearchResultsTableViewController.h */,
 				31433FB31A658BFF00E3420B /* SearchResultsTableViewController.m */,
 				F3EE12891B01BBA800CDEC6A /* consulta.png */,
-				F3EE128A1B01BBA800CDEC6A /* puede.png */,
 				31433F911A6580E200E3420B /* Main.storyboard */,
 				F3EE12921B03E10800CDEC6A /* ConceptosTableViewController.h */,
 				F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */,
@@ -117,6 +124,7 @@
 				F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */,
 				F3EE12841B019F1900CDEC6A /* ViewController.h */,
 				F3EE12851B019F1900CDEC6A /* ViewController.m */,
+				F3EE12951B0681EB00CDEC6A /* logo.png */,
 				31433F941A6580E200E3420B /* Images.xcassets */,
 				31433F961A6580E200E3420B /* LaunchScreen.xib */,
 				31433F871A6580E200E3420B /* Supporting Files */,
@@ -235,6 +243,7 @@
 				F3EE12881B01BACF00CDEC6A /* df.jpg in Resources */,
 				31433F931A6580E200E3420B /* Main.storyboard in Resources */,
 				31433F981A6580E200E3420B /* LaunchScreen.xib in Resources */,
+				F3EE12961B0681EB00CDEC6A /* logo.png in Resources */,
 				F3EE12831B0198BC00CDEC6A /* policias_infraccion.json in Resources */,
 				31433F951A6580E200E3420B /* Images.xcassets in Resources */,
 				F3EE128C1B01BBA800CDEC6A /* puede.png in Resources */,
@@ -262,6 +271,7 @@
 				F3EE128F1B01C50F00CDEC6A /* ConceptsViewController.m in Sources */,
 				31433FB11A65837200E3420B /* AirlineTableViewController.m in Sources */,
 				F3EE12861B019F1900CDEC6A /* ViewController.m in Sources */,
+				F3EE12991B06856C00CDEC6A /* AgenteTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

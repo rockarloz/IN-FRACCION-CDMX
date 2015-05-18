@@ -74,35 +74,15 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="df.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0VV-B6-tTl">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="df.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0VV-B6-tTl">
                                 <rect key="frame" x="0.0" y="62" width="320" height="506"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B83-93-OYZ">
-                                <rect key="frame" x="38" y="375" width="245" height="118"/>
-                                <state key="normal" image="consulta.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTR-Pd-a5b">
-                                <rect key="frame" x="38" y="137" width="245" height="118"/>
-                                <state key="normal" image="puede.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="B83-93-OYZ" firstAttribute="leading" secondItem="djX-j0-m6J" secondAttribute="leadingMargin" constant="22" id="4Ix-bb-vN3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B83-93-OYZ" secondAttribute="trailing" constant="21" id="6mz-Xm-6tf"/>
-                            <constraint firstItem="JTR-Pd-a5b" firstAttribute="leading" secondItem="djX-j0-m6J" secondAttribute="leadingMargin" constant="22" id="6ug-qc-fTf"/>
                             <constraint firstItem="5ba-vt-KgP" firstAttribute="top" secondItem="0VV-B6-tTl" secondAttribute="bottom" id="G6J-AE-Ks1"/>
                             <constraint firstItem="0VV-B6-tTl" firstAttribute="leading" secondItem="djX-j0-m6J" secondAttribute="leadingMargin" constant="-16" id="MTd-M6-p1s"/>
-                            <constraint firstItem="B83-93-OYZ" firstAttribute="top" secondItem="HES-w9-Ccb" secondAttribute="bottom" constant="311" id="MZm-rG-JYb"/>
-                            <constraint firstItem="JTR-Pd-a5b" firstAttribute="top" secondItem="HES-w9-Ccb" secondAttribute="bottom" constant="73" id="S7Q-eQ-NGQ"/>
-                            <constraint firstItem="5ba-vt-KgP" firstAttribute="top" secondItem="B83-93-OYZ" secondAttribute="bottom" constant="75" id="YIU-2g-kUS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JTR-Pd-a5b" secondAttribute="trailing" constant="21" id="bg9-ie-3cH"/>
                             <constraint firstItem="0VV-B6-tTl" firstAttribute="top" secondItem="HES-w9-Ccb" secondAttribute="bottom" constant="-2" id="qQP-kv-4oi"/>
-                            <constraint firstItem="5ba-vt-KgP" firstAttribute="top" secondItem="JTR-Pd-a5b" secondAttribute="bottom" constant="313" id="qdO-07-ZM5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0VV-B6-tTl" secondAttribute="trailing" constant="-16" id="vQu-xa-6sL"/>
                         </constraints>
                     </view>
@@ -236,8 +216,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="consulta.png" width="242" height="117"/>
         <image name="df.jpg" width="1705" height="2462"/>
-        <image name="puede.png" width="245" height="118"/>
     </resources>
 </document>

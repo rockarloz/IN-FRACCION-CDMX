@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-       
+    
     // Get local json file we'll be using to populate our TableView
     NSString *path = [[NSBundle mainBundle] pathForResource:@"policias_infraccion" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
