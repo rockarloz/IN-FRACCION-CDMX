@@ -19,5 +19,27 @@
 
     // Configure the view for the selected state
 }
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        
+        self.backgroundColor=[UIColor clearColor];
+        // Initialization code
+        UIView *selectedView = [[UIView alloc]init];
+        selectedView.backgroundColor = [UIColor clearColor];//[UIColor colorWithRed:0 green:0 blue:255 alpha:0.3];
+        NSLog(@"%f",self.frame.size.width);
+        float a= [[UIScreen mainScreen] bounds].size.width;
+        NSLog(@"%f",a);
+        _nombre = [[UILabel alloc] initWithFrame:CGRectMake(15,0,a-30,200)];
+        
+        _placa= [[UILabel alloc] initWithFrame:CGRectMake(15,200,a-30,100)];
+        
+        
+        [self addSubview:_nombre];
+        [self addSubview:_placa];
+    }
+    return self;
+}
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AirlineTableViewController.h"
+#import "AgenteTableViewCell.h"
 #import "SearchResultsTableViewController.h"
 
 @interface AirlineTableViewController () <UISearchResultsUpdating>
@@ -66,8 +67,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Airline" forIndexPath:indexPath];
-    cell.textLabel.text = [[self.airlines objectAtIndex:indexPath.row] objectForKey:@"nombre"];
+    AgenteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Airline" forIndexPath:indexPath];
+    cell.nombre.text = [[self.airlines objectAtIndex:indexPath.row] objectForKey:@"nombre"];
+    cell.placa.text = [NSString stringWithFormat:@"Placa:%@",[[self.airlines objectAtIndex:indexPath.row] objectForKey:@"placa"] ];
     
     return cell;
 }

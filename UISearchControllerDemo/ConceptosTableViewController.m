@@ -8,10 +8,11 @@
 
 #import "ConceptosTableViewController.h"
 #import "SearchResultsTableViewController.h"
+#import <AFHTTPRequestOperationManager.h>
 
 @interface ConceptosTableViewController () <UISearchResultsUpdating>
 
-@property (nonatomic, strong) NSArray *airlines;
+@property (nonatomic, strong) NSMutableArray *conceptos;
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 
@@ -27,7 +28,7 @@
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    self.airlines = dict[@"policias"];
+   // self.conceptos = dict[@"policias"];
     
     // There's no transition in our storyboard to our search results tableview or navigation controller
     // so we'll have to grab it using the instantiateViewControllerWithIdentifier: method
@@ -46,6 +47,34 @@
                                                        self.searchController.searchBar.frame.size.width, 44.0);
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.searchController.searchBar.placeholder=@"Busca tu infracción";
+    self.searchController.searchBar.barTintColor = [UIColor redColor];
+    self.searchController.searchBar.backgroundColor = [UIColor blueColor];
+    [self getData];
+}
+-(void)getData{
+    _conceptos=[[NSMutableArray alloc]init];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://infracciones.herokuapp.com/concepts.json" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
+        
+        for (NSDictionary *item in responseObject) {
+            [_conceptos addObject:item];
+        }
+        if ([_conceptos count]) {
+            
+            [self.tableView reloadData];
+                 }
+        else{
+            // No Success
+            //   NSLog(@"no hay ");
+        }
+        
+        
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error %@", error);
+        
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +88,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.airlines count];
+    return [self.conceptos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,7 +99,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [[self.airlines objectAtIndex:indexPath.row] objectForKey:@"nombre"];
+    cell.textLabel.text = [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"infraccion"];
     
     return cell;
 }
@@ -112,16 +141,16 @@
     if (airlineName == nil) {
         
         // If empty the search results are the same as the original data
-        self.searchResults = [self.airlines mutableCopy];
+        self.searchResults = [self.conceptos mutableCopy];
     } else {
         
         NSMutableArray *searchResults = [[NSMutableArray alloc] init];
         
         // Else if the airline's name is
-        for (NSDictionary *airline in self.airlines) {
-            if ([airline[@"nombre"] containsString:airlineName] || [airline[@"placa"] containsString:airlineName]) {
+        for (NSDictionary *airline in self.conceptos) {
+            if ([[airline[@"infraccion"]uppercaseString] containsString:airlineName] ) {
                 
-                NSString *str = [NSString stringWithFormat:@"%@", airline[@"nombre"] /*, airline[@"icao"]*/];
+                NSString *str = [NSString stringWithFormat:@"%@", airline[@"infraccion"] /*, airline[@"icao"]*/];
                 [searchResults addObject:str];
             }
             

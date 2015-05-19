@@ -8,9 +8,10 @@
 
 #import "ConceptsViewController.h"
 #import "SearchResultsTableViewController.h"
+#import <AFHTTPRequestOperationManager.h>
 @interface ConceptsViewController () <UISearchResultsUpdating>
 
-@property (nonatomic, strong) NSArray *concepts;
+@property (nonatomic, strong) NSMutableArray *concepts;
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *filterConcepts;
 
@@ -26,7 +27,7 @@
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    self.concepts = dict[@"policias"];
+  //  self.concepts = dict[@"policias"];
     
     // There's no transition in our storyboard to our search results tableview or navigation controller
     // so we'll have to grab it using the instantiateViewControllerWithIdentifier: method
@@ -45,8 +46,32 @@
                                                        self.searchController.searchBar.frame.size.width, 44.0);
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    [self getData];
 }
 
+-(void)getData{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://infracciones.herokuapp.com/concepts.json" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
+        
+        for (NSDictionary *item in responseObject) {
+            [_concepts addObject:item];
+        }
+        if ([_concepts count]) {
+            [ self.tableView reloadData];
+            
+        }
+        else{
+            // No Success
+            //   NSLog(@"no hay ");
+        }
+        
+        
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error %@", error);
+        
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

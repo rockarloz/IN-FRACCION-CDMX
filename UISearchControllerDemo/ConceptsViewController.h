@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConceptsViewController : UITableViewController 
+@interface ConceptsViewController : UITableViewController
+
 
 @end

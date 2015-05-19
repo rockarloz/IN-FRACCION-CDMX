@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AgenteTableViewCell : UITableViewCell
-@property  (nonatomic,strong) NSString *nombre;
-@property  (nonatomic,strong) NSString *placa;
+@property  (nonatomic,strong) IBOutlet UILabel *nombre;
+@property  (nonatomic,strong) IBOutlet UILabel *placa;
 
 @end
