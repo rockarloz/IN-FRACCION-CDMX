@@ -140,7 +140,7 @@
         <!--Conceptos Table View Controller-->
         <scene sceneID="vvE-lx-OmO">
             <objects>
-                <tableViewController storyboardIdentifier="conceptos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cmv-r4-5AL" customClass="ConceptosTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="concept" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cmv-r4-5AL" customClass="ConceptosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KNH-v2-4Wy">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

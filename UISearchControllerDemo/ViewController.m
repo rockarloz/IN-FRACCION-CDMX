@@ -42,6 +42,9 @@
                                             action:@selector(infracciones)];
     [a addGestureRecognizer:singleFingerTap];
     
+    
+    
+    //botón 2
     UIView *b=[[UIView alloc]initWithFrame:CGRectMake(50, self.view.frame.size.height/2 +100, self.view.frame.size.width-100, 100)];
     b.backgroundColor=[UIColor whiteColor];
     
@@ -61,26 +64,17 @@
     
     
     
-    UIButton* agentes = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [agentes addTarget:self
-                 action:@selector(goToAgentes:)
-       forControlEvents:UIControlEventTouchUpInside];
-    [agentes setTitle:@"¿Te puede infraccionar?" forState:UIControlStateNormal];
-    agentes.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
-   // [self.view addSubview:agentes];
+    UITapGestureRecognizer *singleFingerTap2 =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(agentes)];
+    [b addGestureRecognizer:singleFingerTap2];
     
     
     
     
-    UIButton* conceptos = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [conceptos addTarget:self
-                action:@selector(goToConcepts:)
-      forControlEvents:UIControlEventTouchUpInside];
-    [conceptos setTitle:@"revisa tu infraccion" forState:UIControlStateNormal];
-    conceptos.frame = CGRectMake(80.0, 100.0, 160.0, 40.0);
-   // [self.view addSubview:conceptos];
-    self.view.backgroundColor=[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
-    // Do any additional setup after loading the view.
+    
+      self.view.backgroundColor=[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,14 +90,7 @@
     ConceptosTableViewController *list=[[ConceptosTableViewController alloc]init];
     [self.navigationController pushViewController:list animated:YES];
 }
--(IBAction)goToAgentes:(id)sender
-{
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-   
-    
-    AirlineTableViewController *list=[storyboard instantiateViewControllerWithIdentifier:@"Airline"];    [self.navigationController pushViewController:list animated:YES];
-}
+
 
 -(void)infracciones{
     
@@ -115,7 +102,9 @@
 
 -(void)agentes{
     
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ConceptosTableViewController *concept=[storyboard instantiateViewControllerWithIdentifier:@"concept"];
+    [self.navigationController pushViewController:concept animated:NO];
     
 }
 /*

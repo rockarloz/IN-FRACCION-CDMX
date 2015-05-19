@@ -20,6 +20,7 @@
 @implementation AirlineTableViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     // Get local json file we'll be using to populate our TableView
@@ -44,7 +45,8 @@
     self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,
                                                        self.searchController.searchBar.frame.origin.y,
                                                        self.searchController.searchBar.frame.size.width, 44.0);
-    
+    self.searchController.searchBar.barTintColor = [UIColor redColor];
+    self.searchController.searchBar.backgroundColor = [UIColor blueColor];
     self.tableView.tableHeaderView = self.searchController.searchBar;
 }
 
