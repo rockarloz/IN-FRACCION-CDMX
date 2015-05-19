@@ -3,11 +3,13 @@
 //  UISearchControllerDemo
 //
 //  Created by Carlos Castellanos on 19/05/15.
-//  Copyright (c) 2015 JHM. All rights reserved.
+//
+//  Created by Carlos Castellanos.
+//  Copyright (c) 2015 @rockarloz. All rights reserved.
 //
 
 #import "DescriptionViewController.h"
-
+#import "RateViewController.h"
 @interface DescriptionViewController ()
 
 @end
@@ -56,9 +58,20 @@
     [lbl setFont:[UIFont boldSystemFontOfSize:14]];
     [btn addSubview:lbl];
     [self.view addSubview:btn];
+    
+    
+    
+    UITapGestureRecognizer *singleFingerTap2 =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(rate)];
+    [btn addGestureRecognizer:singleFingerTap2];
     // Do any additional setup after loading the view.
 }
+-(void)rate{
+    RateViewController *rate=[[RateViewController alloc]init];
+    [self.navigationController pushViewController:rate animated:NO];
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
