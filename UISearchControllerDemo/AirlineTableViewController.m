@@ -9,6 +9,7 @@
 #import "AirlineTableViewController.h"
 #import "AgenteTableViewCell.h"
 #import "SearchResultsTableViewController.h"
+#import "DescriptionViewController.h"
 
 @interface AirlineTableViewController () <UISearchResultsUpdating>
 
@@ -127,6 +128,12 @@
             self.searchResults = searchResults;
         }
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DescriptionViewController *des=[[DescriptionViewController alloc]init];
+    [self.navigationController pushViewController:des animated:NO];
+   
 }
 
 
