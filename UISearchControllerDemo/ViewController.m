@@ -35,6 +35,14 @@
     linea1.backgroundColor=[UIColor yellowColor];
     [a addSubview:linea1];
     
+    UILabel *desc1=[[UILabel alloc]initWithFrame:CGRectMake(0, linea1.frame.origin.y+linea1.frame.size.height, a.frame.size.width, 35)];
+    desc1.text=@"Consulta la lista oficial de tránsito que puede infraccionarte.";
+    desc1.numberOfLines=5;
+    desc1.font=[UIFont systemFontOfSize:12];
+    desc1.textColor=[UIColor lightGrayColor];
+    desc1.textAlignment=NSTextAlignmentCenter;
+    [a addSubview:desc1];
+    
     
     
     UITapGestureRecognizer *singleFingerTap =
@@ -60,6 +68,13 @@
     linea2.backgroundColor=[UIColor yellowColor];
     [b addSubview:linea2];
 
+    UILabel *desc2=[[UILabel alloc]initWithFrame:CGRectMake(0, linea2.frame.origin.y+linea2.frame.size.height, a.frame.size.width, 35)];
+    desc2.text=@"Consulta la multa que debes pagar por la infracción que cometiste.";
+    desc2.numberOfLines=5;
+    desc2.font=[UIFont systemFontOfSize:12];
+    desc2.textColor=[UIColor lightGrayColor];
+    desc2.textAlignment=NSTextAlignmentCenter;
+    [b addSubview:desc2];
     
     
     

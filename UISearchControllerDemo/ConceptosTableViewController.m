@@ -48,8 +48,10 @@
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.searchController.searchBar.placeholder=@"Busca tu infracción";
-    self.searchController.searchBar.barTintColor = [UIColor redColor];
-    self.searchController.searchBar.backgroundColor = [UIColor blueColor];
+    self.searchController.searchBar.barTintColor =  [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
+
+    self.searchController.searchBar.backgroundColor =  [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
+
     [self getData];
 }
 -(void)getData{

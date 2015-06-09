@@ -9,5 +9,6 @@
 #import "ViewController.h"
 
 @interface DescriptionViewController : ViewController
-
+@property (nonatomic , retain) NSString *name;
+@property (nonatomic , retain) NSString *plate;
 @end

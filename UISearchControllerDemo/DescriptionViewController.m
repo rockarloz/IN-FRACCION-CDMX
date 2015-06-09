@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
    // [super viewDidLoad];
     UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(10, 64, self.view.frame.size.width-20, 100)];
-    name.text=@"Sandra Nayeli Barron Barron";
+    name.text=_name;
     name.numberOfLines=3;
     [name setFont:[UIFont boldSystemFontOfSize:28]];
     name.textColor=[UIColor grayColor];
@@ -27,7 +27,7 @@
     [name sizeToFit];
     
     UILabel *plate=[[UILabel alloc]initWithFrame:CGRectMake(10, name.frame.size.height+name.frame.origin.y+10, self.view.frame.size.width-20, 100)];
-    plate.text=@"Placa:12345";
+    plate.text=_plate;
     plate.textColor=[UIColor lightGrayColor];
     plate.numberOfLines=3;
     [plate setFont:[UIFont boldSystemFontOfSize:27]];

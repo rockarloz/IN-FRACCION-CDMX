@@ -47,8 +47,10 @@
                                                        self.searchController.searchBar.frame.origin.y,
                                                        self.searchController.searchBar.frame.size.width, 44.0);
     self.searchController.searchBar.placeholder=@"Busca el nombre o placa de un agente";
-    self.searchController.searchBar.barTintColor = [UIColor redColor];
-    self.searchController.searchBar.backgroundColor = [UIColor blueColor];
+    self.searchController.searchBar.barTintColor = [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
+    self.searchController.searchBar.backgroundColor = [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
+    self.searchController.searchBar.tintColor= [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
+
     self.tableView.tableHeaderView = self.searchController.searchBar;
 }
 
@@ -131,6 +133,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DescriptionViewController *des=[[DescriptionViewController alloc]init];
+    des.name=[[self.airlines objectAtIndex:indexPath.row] objectForKey:@"nombre"];
+    des.plate = [NSString stringWithFormat:@"Placa:%@",[[self.airlines objectAtIndex:indexPath.row] objectForKey:@"placa"] ];
     [self.navigationController pushViewController:des animated:NO];
    
 }
