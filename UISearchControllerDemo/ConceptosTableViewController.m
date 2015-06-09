@@ -62,10 +62,31 @@
         for (NSDictionary *item in responseObject) {
             [_conceptos addObject:item];
         }
+      
+        
         if ([_conceptos count]) {
-            
+            // Succes Get data :D
             [self.tableView reloadData];
-                 }
+            CGFloat heightAux=0;
+            for (NSDictionary *content in _conceptos) {
+                NSString* text=[content objectForKey:@"infraccion"];
+                CGSize constraint = CGSizeMake(300 - (10 * 2), 20000.0f);
+                // remember change this method for ios  8 :D :P
+                
+                CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14]      constrainedToSize:constraint lineBreakMode: NSLineBreakByWordWrapping];
+                
+                CGFloat height = MAX(size.height, 44.0f);
+                
+                
+                
+                height= height + (10 * 2.5);
+                heightAux=heightAux+height;
+                
+            }
+            
+           
+                   }
+        
         else{
             // No Success
             //   NSLog(@"no hay ");
@@ -102,7 +123,7 @@
     }
     
     cell.textLabel.text = [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"infraccion"];
-    
+    cell.textLabel.numberOfLines=10;
     return cell;
 }
 
@@ -161,6 +182,25 @@
     }
 }
 
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // get the text for indexPath
+    // CGSize size = [cell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    //return size.height;
+    //return UITableViewAutomaticDimension;
+    NSString* text=[[_conceptos objectAtIndex:indexPath.row]objectForKey:@"infraccion"];
+    CGSize constraint = CGSizeMake(300 - (10 * 2), 20000.0f);
+    // remember change this method for ios  8 :D :P
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14]      constrainedToSize:constraint lineBreakMode: NSLineBreakByWordWrapping];
+    
+    CGFloat height = MAX(size.height, 44.0f);
+    
+    
+    
+    return height + (10 * 2.5);
+}
 
 
 

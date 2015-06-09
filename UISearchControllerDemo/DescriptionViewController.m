@@ -69,6 +69,8 @@
 }
 -(void)rate{
     RateViewController *rate=[[RateViewController alloc]init];
+    rate.name=_name;
+    rate.plate=_plate;
     [self.navigationController pushViewController:rate animated:NO];
 
 }

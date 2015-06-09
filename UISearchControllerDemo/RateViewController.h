@@ -9,5 +9,7 @@
 #import "ViewController.h"
 
 @interface RateViewController : ViewController <UIScrollViewDelegate>
-@property (nonatomic,strong)IBOutlet UIPageControl *page;
+@property (strong, nonatomic) IBOutlet UIPageControl *pagecontrol;
+@property (nonatomic , retain) NSString *name;
+@property (nonatomic , retain) NSString *plate;
 @end
