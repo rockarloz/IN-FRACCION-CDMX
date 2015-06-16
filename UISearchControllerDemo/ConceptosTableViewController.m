@@ -79,7 +79,7 @@
                 
                 
                 
-                height= height + (10 * 2.5);
+                height= height + (10 * 14.5);
                 heightAux=heightAux+height;
                 
             }
@@ -123,7 +123,7 @@
     }
     
     cell.textLabel.text = [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"infraccion"];
-    cell.textLabel.numberOfLines=10;
+    cell.textLabel.numberOfLines=15;
     return cell;
 }
 
@@ -199,7 +199,7 @@
     
     
     
-    return height + (10 * 2.5);
+    return height + (10 * 14.5);
 }
 
 

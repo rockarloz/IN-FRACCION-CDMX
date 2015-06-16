@@ -18,9 +18,9 @@
     UIScrollView *scroll;
 }
 - (void)viewDidLoad {
-    paginas=5;
+    paginas=6;
    
-    UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(10, 64, self.view.frame.size.width-20, 100)];
+    UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(10, 74, self.view.frame.size.width-20, 100)];
     name.text=_name;
     name.numberOfLines=3;
     [name setFont:[UIFont boldSystemFontOfSize:28]];
@@ -46,23 +46,69 @@
     
    scroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, self.view.frame.size.height/2)];
     scroll.delegate=self;
+    scroll.pagingEnabled=YES;
     scroll.scrollEnabled=YES;
     scroll.backgroundColor=[UIColor whiteColor];
     scroll.contentSize = CGSizeMake(self.view.frame.size.width * paginas,self.view.frame.size.height/2);
    
-    _pagecontrol=[[UIPageControl alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height-80, 10, 10)];
+    _pagecontrol=[[UIPageControl alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-40, self.view.frame.size.height-20, 80, 10)];
     _pagecontrol.tintColor=[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
-    
+    _pagecontrol.backgroundColor=[UIColor redColor];
 
     
     _pagecontrol.numberOfPages=paginas;
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
         
-        UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i),10 ,40,40)];
-        texto.text=@"Texto";
-        [scroll addSubview:texto];
-        
+        if (i==0) {
+            UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
+            texto.numberOfLines=3;
+            texto.text=@"¿El oficial se identificó con su nombre y número de placa?";
+             texto.textAlignment=NSTextAlignmentCenter;
+            [texto sizeToFit];
+            texto.textColor=[UIColor grayColor];
+           
+            [scroll addSubview:texto];
+            
+            UIButton *paloma=[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-20, texto.frame.size.height+texto.frame.origin.y+20, 40, 40)];
+            [scroll addSubview:paloma];
+            paloma.backgroundColor=[UIColor redColor];
+        }
+        else if (i==1) {
+            UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
+            texto.numberOfLines=3;
+            texto.text=@"¿El oficial señaló la infracción cometida?";
+            [texto sizeToFit];
+            [scroll addSubview:texto];
+        }
+        else if (i==2) {
+            UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
+            texto.numberOfLines=3;
+            texto.text=@"¿El oficial mostró el articulo del reglamento que lo fundamenta?";
+            [texto sizeToFit];
+            [scroll addSubview:texto];
+        }
+        else if (i==3) {
+            UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
+            texto.numberOfLines=3;
+            texto.text=@"¿La sanción coincidió con la infracción mostrada?";
+            [texto sizeToFit];
+            [scroll addSubview:texto];
+        }
+        else if (i==4) {
+            UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
+            texto.numberOfLines=3;
+            texto.text=@"¿El oficial solicitó y devolvió documentos?";
+            [texto sizeToFit];
+            [scroll addSubview:texto];
+        }
+        else if (i==5) {
+            UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
+            texto.numberOfLines=3;
+            texto.text=@"¿El oficial entregó copia de la infracción?";
+            [texto sizeToFit];
+            [scroll addSubview:texto];
+        }
     }
     
     [self.view addSubview:scroll];
