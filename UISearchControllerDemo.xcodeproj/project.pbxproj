@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		07567D401B0B0711007E6B3A /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07567D3F1B0B0711007E6B3A /* DescriptionViewController.m */; };
 		07567D431B0B0CE0007E6B3A /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07567D421B0B0CE0007E6B3A /* RateViewController.m */; };
+		07FA0A561B2FBA1900D63741 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FA0A541B2FBA1900D63741 /* no.png */; };
+		07FA0A571B2FBA1900D63741 /* si.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FA0A551B2FBA1900D63741 /* si.png */; };
 		31433F8A1A6580E200E3420B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433F891A6580E200E3420B /* main.m */; };
 		31433F8D1A6580E200E3420B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433F8C1A6580E200E3420B /* AppDelegate.m */; };
 		31433F931A6580E200E3420B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31433F911A6580E200E3420B /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		07567D3F1B0B0711007E6B3A /* DescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionViewController.m; sourceTree = "<group>"; };
 		07567D411B0B0CE0007E6B3A /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		07567D421B0B0CE0007E6B3A /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
+		07FA0A541B2FBA1900D63741 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
+		07FA0A551B2FBA1900D63741 /* si.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = si.png; sourceTree = "<group>"; };
 		0878830D0BF299313AE2BA5F /* Pods-UISearchControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISearchControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UISearchControllerDemo/Pods-UISearchControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		31433F841A6580E200E3420B /* UISearchControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISearchControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31433F881A6580E200E3420B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		31433F7B1A6580E200E3420B = {
 			isa = PBXGroup;
 			children = (
+				07FA0A541B2FBA1900D63741 /* no.png */,
+				07FA0A551B2FBA1900D63741 /* si.png */,
 				F3EE12971B06856C00CDEC6A /* AgenteTableViewCell.h */,
 				F3EE12981B06856C00CDEC6A /* AgenteTableViewCell.m */,
 				31433F861A6580E200E3420B /* UISearchControllerDemo */,
@@ -281,7 +287,9 @@
 				31433F931A6580E200E3420B /* Main.storyboard in Resources */,
 				31433F981A6580E200E3420B /* LaunchScreen.xib in Resources */,
 				F3EE12961B0681EB00CDEC6A /* logo.png in Resources */,
+				07FA0A571B2FBA1900D63741 /* si.png in Resources */,
 				F3EE12831B0198BC00CDEC6A /* policias_infraccion.json in Resources */,
+				07FA0A561B2FBA1900D63741 /* no.png in Resources */,
 				31433F951A6580E200E3420B /* Images.xcassets in Resources */,
 				F3EE128C1B01BBA800CDEC6A /* puede.png in Resources */,
 			);

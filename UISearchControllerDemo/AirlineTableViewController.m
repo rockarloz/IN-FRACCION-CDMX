@@ -122,9 +122,12 @@
         // Else if the airline's name is
         for (NSDictionary *airline in self.airlines) {
             if ([airline[@"nombre"] containsString:airlineName] || [airline[@"placa"] containsString:airlineName]) {
-                
+                NSMutableDictionary *data=[[NSMutableDictionary alloc]init];
                 NSString *str = [NSString stringWithFormat:@"%@", airline[@"nombre"] /*, airline[@"icao"]*/];
-                [searchResults addObject:str];
+                NSString *plt = [NSString stringWithFormat:@"%@", airline[@"placa"] /*, airline[@"icao"]*/];
+                [data setObject:str forKey:@"name"];
+                [data setObject:plt forKey:@"plate"];
+                [searchResults addObject:data];
             }
             
             self.searchResults = searchResults;
@@ -140,7 +143,11 @@
    
 }
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.navigationController.topViewController.navigationItem.title=@"Agentes";
+    self.navigationController.navigationBar.backItem.title=@"";
+}
 
 
 @end

@@ -70,9 +70,32 @@
            
             [scroll addSubview:texto];
             
-            UIButton *paloma=[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-20, texto.frame.size.height+texto.frame.origin.y+20, 40, 40)];
+            UIButton *paloma=[UIButton buttonWithType:UIButtonTypeCustom];
+
+           paloma.frame= CGRectMake(self.view.frame.size.width/2-20, texto.frame.size.height+texto.frame.origin.y+20, 40, 40);
+            [paloma addTarget:self
+                       action:@selector(aMethod:)
+             forControlEvents:UIControlEventTouchUpInside];
             [scroll addSubview:paloma];
+            UIImage *btnImage = [UIImage imageNamed:@"si.png"];
+            [paloma setImage:btnImage forState:UIControlStateNormal];
             paloma.backgroundColor=[UIColor redColor];
+            
+            
+            UIButton *tache=[UIButton buttonWithType:UIButtonTypeCustom];
+            
+            tache.frame= CGRectMake(self.view.frame.size.width/2+20, texto.frame.size.height+texto.frame.origin.y+20, 40, 40);
+            [tache addTarget:self
+                       action:@selector(aMethod:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:tache];
+            UIImage *btnImage2 = [UIImage imageNamed:@"no.png"];
+            [tache setImage:btnImage2 forState:UIControlStateNormal];
+            tache.backgroundColor=[UIColor redColor];
+            
+            
+            
+          
         }
         else if (i==1) {
             UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
@@ -126,6 +149,12 @@
     CGFloat pageWidth = scroll.frame.size.width;
     int page = floor((scroll.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     _pagecontrol.currentPage = page;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.navigationController.topViewController.navigationItem.title=@"Evalúa el proceso";
+   self.navigationController.navigationBar.backItem.title=@"";
 }
 /*
 #pragma mark - Navigation

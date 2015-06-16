@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
    // [super viewDidLoad];
-    UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(10, 64, self.view.frame.size.width-20, 100)];
+    UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(10, 84, self.view.frame.size.width-20, 100)];
     name.text=_name;
     name.numberOfLines=3;
     [name setFont:[UIFont boldSystemFontOfSize:28]];
@@ -78,7 +78,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.navigationController.topViewController.navigationItem.title=@"Detalles";
+    self.navigationController.navigationBar.backItem.title=@"";
+}
 /*
 #pragma mark - Navigation
 

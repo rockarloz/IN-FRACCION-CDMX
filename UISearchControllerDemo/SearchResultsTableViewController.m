@@ -9,7 +9,7 @@
 
 
 #import "SearchResultsTableViewController.h"
-
+#import "AgenteTableViewCell.h"
 @interface SearchResultsTableViewController ()
 
 @property (nonatomic, strong) NSArray *array;
@@ -28,9 +28,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
+    AgenteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.searchResults[indexPath.row];
+    cell.nombre.text = [self.searchResults[indexPath.row]objectForKey:@"name"];
+     cell.placa.text = [self.searchResults[indexPath.row]objectForKey:@"plate"];
     
     return cell;
 }
