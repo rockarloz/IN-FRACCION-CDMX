@@ -7,7 +7,7 @@
 //
 
 #import "ConceptosTableViewController.h"
-#import "SearchResultsTableViewController.h"
+#import "SearchResults2TableViewController.h"
 #import <AFHTTPRequestOperationManager.h>
 
 @interface ConceptosTableViewController () <UISearchResultsUpdating>
@@ -32,7 +32,7 @@
     
     // There's no transition in our storyboard to our search results tableview or navigation controller
     // so we'll have to grab it using the instantiateViewControllerWithIdentifier: method
-    UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TableSearchResultsNavController"];
+    UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"tablaconceptos"];
     
     // Our instance of UISearchController will use searchResults
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
@@ -146,7 +146,7 @@
         UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
         
         // Present SearchResultsTableViewController as the topViewController
-        SearchResultsTableViewController *vc = (SearchResultsTableViewController *)navController.topViewController;
+        SearchResults2TableViewController *vc = (SearchResults2TableViewController *)navController.topViewController;
         
         // Update searchResults
         vc.searchResults = self.searchResults;

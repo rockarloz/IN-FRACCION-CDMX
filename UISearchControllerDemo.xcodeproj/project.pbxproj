@@ -11,6 +11,7 @@
 		07567D431B0B0CE0007E6B3A /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07567D421B0B0CE0007E6B3A /* RateViewController.m */; };
 		07FA0A561B2FBA1900D63741 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FA0A541B2FBA1900D63741 /* no.png */; };
 		07FA0A571B2FBA1900D63741 /* si.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FA0A551B2FBA1900D63741 /* si.png */; };
+		07FA0A5A1B2FC81800D63741 /* SearchResults2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FA0A591B2FC81800D63741 /* SearchResults2TableViewController.m */; };
 		31433F8A1A6580E200E3420B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433F891A6580E200E3420B /* main.m */; };
 		31433F8D1A6580E200E3420B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433F8C1A6580E200E3420B /* AppDelegate.m */; };
 		31433F931A6580E200E3420B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31433F911A6580E200E3420B /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		31433FA41A6580E300E3420B /* UISearchControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433FA31A6580E300E3420B /* UISearchControllerDemoTests.m */; };
 		31433FB11A65837200E3420B /* AirlineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433FB01A65837200E3420B /* AirlineTableViewController.m */; };
 		31433FB41A658BFF00E3420B /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433FB31A658BFF00E3420B /* SearchResultsTableViewController.m */; };
-		F3EE12831B0198BC00CDEC6A /* policias_infraccion.json in Resources */ = {isa = PBXBuildFile; fileRef = F3EE12821B0198BC00CDEC6A /* policias_infraccion.json */; };
 		F3EE12861B019F1900CDEC6A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12851B019F1900CDEC6A /* ViewController.m */; };
 		F3EE12881B01BACF00CDEC6A /* df.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3EE12871B01BACF00CDEC6A /* df.jpg */; };
 		F3EE128B1B01BBA800CDEC6A /* consulta.png in Resources */ = {isa = PBXBuildFile; fileRef = F3EE12891B01BBA800CDEC6A /* consulta.png */; };
@@ -48,6 +48,8 @@
 		07567D421B0B0CE0007E6B3A /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		07FA0A541B2FBA1900D63741 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
 		07FA0A551B2FBA1900D63741 /* si.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = si.png; sourceTree = "<group>"; };
+		07FA0A581B2FC81800D63741 /* SearchResults2TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResults2TableViewController.h; sourceTree = "<group>"; };
+		07FA0A591B2FC81800D63741 /* SearchResults2TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResults2TableViewController.m; sourceTree = "<group>"; };
 		0878830D0BF299313AE2BA5F /* Pods-UISearchControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISearchControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UISearchControllerDemo/Pods-UISearchControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		31433F841A6580E200E3420B /* UISearchControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISearchControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31433F881A6580E200E3420B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 		31433FB21A658BFF00E3420B /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
 		31433FB31A658BFF00E3420B /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		72132893E7A25F1ED5820B41 /* Pods-UISearchControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISearchControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-UISearchControllerDemo/Pods-UISearchControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
-		F3EE12821B0198BC00CDEC6A /* policias_infraccion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = policias_infraccion.json; sourceTree = "<group>"; };
 		F3EE12841B019F1900CDEC6A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F3EE12851B019F1900CDEC6A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F3EE12871B01BACF00CDEC6A /* df.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = df.jpg; sourceTree = "<group>"; };
@@ -143,6 +144,8 @@
 				31433F911A6580E200E3420B /* Main.storyboard */,
 				F3EE12921B03E10800CDEC6A /* ConceptosTableViewController.h */,
 				F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */,
+				07FA0A581B2FC81800D63741 /* SearchResults2TableViewController.h */,
+				07FA0A591B2FC81800D63741 /* SearchResults2TableViewController.m */,
 				F3EE128D1B01C50F00CDEC6A /* ConceptsViewController.h */,
 				F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */,
 				F3EE12841B019F1900CDEC6A /* ViewController.h */,
@@ -158,7 +161,6 @@
 		31433F871A6580E200E3420B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F3EE12821B0198BC00CDEC6A /* policias_infraccion.json */,
 				31433F881A6580E200E3420B /* Info.plist */,
 				31433F891A6580E200E3420B /* main.m */,
 			);
@@ -288,7 +290,6 @@
 				31433F981A6580E200E3420B /* LaunchScreen.xib in Resources */,
 				F3EE12961B0681EB00CDEC6A /* logo.png in Resources */,
 				07FA0A571B2FBA1900D63741 /* si.png in Resources */,
-				F3EE12831B0198BC00CDEC6A /* policias_infraccion.json in Resources */,
 				07FA0A561B2FBA1900D63741 /* no.png in Resources */,
 				31433F951A6580E200E3420B /* Images.xcassets in Resources */,
 				F3EE128C1B01BBA800CDEC6A /* puede.png in Resources */,
@@ -346,6 +347,7 @@
 				F3EE12941B03E10800CDEC6A /* ConceptosTableViewController.m in Sources */,
 				31433FB41A658BFF00E3420B /* SearchResultsTableViewController.m in Sources */,
 				31433F8D1A6580E200E3420B /* AppDelegate.m in Sources */,
+				07FA0A5A1B2FC81800D63741 /* SearchResults2TableViewController.m in Sources */,
 				31433F8A1A6580E200E3420B /* main.m in Sources */,
 				F3EE128F1B01C50F00CDEC6A /* ConceptsViewController.m in Sources */,
 				31433FB11A65837200E3420B /* AirlineTableViewController.m in Sources */,
