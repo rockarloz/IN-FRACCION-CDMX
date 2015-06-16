@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UISearchControllerDemo/AirlineTableViewController.m"
-            timestampString = "456117934.649602"
+            timestampString = "456118682.502883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "-downloadData"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UISearchControllerDemo/AirlineTableViewController.m"
-            timestampString = "456117934.649602"
+            timestampString = "456118682.502883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-search"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,13 +90,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UISearchControllerDemo/AirlineTableViewController.m"
-            timestampString = "456118325.078481"
+            timestampString = "456118682.502883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AirlineTableViewController updateFilteredContentForAirlineName:]"
+                  moduleName = "UISearchControllerDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Carlos/Documents/IN-FRACCION-CDMX/UISearchControllerDemo/AirlineTableViewController.m"
+                  timestampString = "456118682.567552"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "1244">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AirlineTableViewController updateFilteredContentForAirlineName:]"
+                  moduleName = "UISearchControllerDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Carlos/Documents/IN-FRACCION-CDMX/UISearchControllerDemo/AirlineTableViewController.m"
+                  timestampString = "456118682.567771"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "1328">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UISearchControllerDemo/AirlineTableViewController.m"
-            timestampString = "456118321.216905"
+            timestampString = "456118682.502883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>

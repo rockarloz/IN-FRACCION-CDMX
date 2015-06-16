@@ -85,6 +85,19 @@
 
 }
 - (void)viewDidLoad {
+    
+    
+    UIButton *search =  [UIButton buttonWithType:UIButtonTypeInfoLight];
+    //[search setImage:[UIImage imageNamed:@"df.png"] forState:UIControlStateNormal];
+    [search addTarget:self action:@selector(UpdateData) forControlEvents:UIControlEventTouchUpInside];
+    
+    [search setFrame:CGRectMake(0, 0, 25 , 25)];
+    UIBarButtonItem *buscar = [[UIBarButtonItem alloc]initWithCustomView:search];
+    NSMutableArray *a=[[NSMutableArray alloc]initWithObjects:buscar, nil];
+    self.navigationController.topViewController.navigationItem.rightBarButtonItems = a;
+    
+    
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString* foofile = [documentsDirectory stringByAppendingPathComponent:@"policias.json"];
