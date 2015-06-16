@@ -9,15 +9,27 @@
 #import "ViewController.h"
 #import "AirlineTableViewController.h"
 #import "ConceptosTableViewController.h"
+#import "AboutViewController.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-
+-(void)gotoAbout{
+    AboutViewController *about=[[AboutViewController alloc]init];
+    [self.navigationController pushViewController:about animated:YES];
+}
 - (void)viewDidLoad {
      [super viewDidLoad];
     
+    UIButton *search =  [UIButton buttonWithType:UIButtonTypeInfoLight];
+    //[search setImage:[UIImage imageNamed:@"df.png"] forState:UIControlStateNormal];
+    [search addTarget:self action:@selector(gotoAbout) forControlEvents:UIControlEventTouchUpInside];
+    
+    [search setFrame:CGRectMake(0, 0, 25 , 25)];
+    UIBarButtonItem *buscar = [[UIBarButtonItem alloc]initWithCustomView:search];
+    NSMutableArray *as=[[NSMutableArray alloc]initWithObjects:buscar, nil];
+    self.navigationController.topViewController.navigationItem.rightBarButtonItems = as;
     
     UIImageView *img=[[UIImageView alloc]initWithFrame:CGRectMake(25, 100,self.view.frame.size.width -50 , 60)];
     img.image=[UIImage imageNamed:@"logo.png"];
