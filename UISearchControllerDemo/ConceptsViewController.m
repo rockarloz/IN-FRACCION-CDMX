@@ -51,7 +51,7 @@
 
 -(void)getData{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://infracciones.herokuapp.com/concepts.json" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [manager GET:@"http://201.144.220.174/infracciones/api/articulos/articulo_vigente" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
         
         for (NSDictionary *item in responseObject) {
             [_concepts addObject:item];

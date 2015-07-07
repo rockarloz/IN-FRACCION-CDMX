@@ -41,22 +41,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UISearchControllerDemo/ConceptosTableViewController.m"
-            timestampString = "456116738.290701"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "-updateSearchResultsForSearchController:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "UISearchControllerDemo/AirlineTableViewController.m"
             timestampString = "456118682.502883"
             startingColumnNumber = "9223372036854775807"
@@ -97,38 +81,6 @@
             endingLineNumber = "134"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AirlineTableViewController updateFilteredContentForAirlineName:]"
-                  moduleName = "UISearchControllerDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Carlos/Documents/IN-FRACCION-CDMX/UISearchControllerDemo/AirlineTableViewController.m"
-                  timestampString = "456118682.567552"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "134"
-                  endingLineNumber = "134"
-                  offsetFromSymbolStart = "1244">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AirlineTableViewController updateFilteredContentForAirlineName:]"
-                  moduleName = "UISearchControllerDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Carlos/Documents/IN-FRACCION-CDMX/UISearchControllerDemo/AirlineTableViewController.m"
-                  timestampString = "456118682.567771"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "134"
-                  endingLineNumber = "134"
-                  offsetFromSymbolStart = "1328">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -16,6 +16,13 @@
 {
     int paginas;
     UIScrollView *scroll;
+    
+    int identificacion;
+    int infraccion;
+    int articulo;
+    int coincidio;
+    int documentos;
+    int copia;
 }
 - (void)viewDidLoad {
     paginas=6;
@@ -47,7 +54,7 @@
    scroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, self.view.frame.size.height/2)];
     scroll.delegate=self;
     scroll.pagingEnabled=YES;
-    scroll.scrollEnabled=YES;
+    scroll.scrollEnabled=NO;
     scroll.backgroundColor=[UIColor whiteColor];
     scroll.contentSize = CGSizeMake(self.view.frame.size.width * paginas,self.view.frame.size.height/2);
    
@@ -70,11 +77,13 @@
            
             [scroll addSubview:texto];
             
+            
+            
+            
             UIButton *paloma=[UIButton buttonWithType:UIButtonTypeCustom];
-
-           paloma.frame= CGRectMake(self.view.frame.size.width/2-20, texto.frame.size.height+texto.frame.origin.y+20, 40, 40);
+            paloma.frame= CGRectMake(self.view.frame.size.width/2-90, texto.frame.size.height+texto.frame.origin.y+20,60, 60);
             [paloma addTarget:self
-                       action:@selector(aMethod:)
+                       action:@selector(positive)
              forControlEvents:UIControlEventTouchUpInside];
             [scroll addSubview:paloma];
             UIImage *btnImage = [UIImage imageNamed:@"si.png"];
@@ -84,9 +93,9 @@
             
             UIButton *tache=[UIButton buttonWithType:UIButtonTypeCustom];
             
-            tache.frame= CGRectMake(self.view.frame.size.width/2+20, texto.frame.size.height+texto.frame.origin.y+20, 40, 40);
+            tache.frame= CGRectMake(self.view.frame.size.width/2+30, texto.frame.size.height+texto.frame.origin.y+20, 60, 60);
             [tache addTarget:self
-                       action:@selector(aMethod:)
+                       action:@selector(negative)
              forControlEvents:UIControlEventTouchUpInside];
             [scroll addSubview:tache];
             UIImage *btnImage2 = [UIImage imageNamed:@"no.png"];
@@ -155,6 +164,22 @@
     [super viewDidAppear:animated];
     self.navigationController.topViewController.navigationItem.title=@"Evalúa el proceso";
    self.navigationController.navigationBar.backItem.title=@"";
+}
+
+
+-(void)positive{
+
+ [scroll setContentOffset:CGPointMake(self.view.frame.size.width*1, 0) animated:YES];
+
+}
+-(void)negative{
+ [scroll setContentOffset:CGPointMake(self.view.frame.size.width*1, 0) animated:YES];
+
+}
+-(void)makeURL{
+
+    NSString *url=[NSString stringWithFormat:@"http://infracciones.herokuapp.com//cops/new?identification=1&infraccion=1&articulo=1&coincidio=1&documents=1&copy=1&latitude=19.4394829&longitude=-99.1823385&cop_id=830625"];
+
 }
 /*
 #pragma mark - Navigation

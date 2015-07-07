@@ -5,7 +5,7 @@
 //  Created by Carlos Castellanos on 13/05/15.
 //  Copyright (c) 2015 JHM. All rights reserved.
 //
-
+#import "ConceptsTableViewCell.h"
 #import "ConceptosTableViewController.h"
 #import "SearchResults2TableViewController.h"
 #import <AFHTTPRequestOperationManager.h>
@@ -57,7 +57,7 @@
 -(void)getData{
     _conceptos=[[NSMutableArray alloc]init];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://infracciones.herokuapp.com/concepts.json" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [manager GET:@"http://201.144.220.174/infracciones/api/articulos/articulo_vigente" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
         
         for (NSDictionary *item in responseObject) {
             [_conceptos addObject:item];
@@ -69,7 +69,7 @@
             [self.tableView reloadData];
             CGFloat heightAux=0;
             for (NSDictionary *content in _conceptos) {
-                NSString* text=[content objectForKey:@"infraccion"];
+                NSString* text=[content objectForKey:@"descripcion"];
                 CGSize constraint = CGSizeMake(300 - (10 * 2), 20000.0f);
                 // remember change this method for ios  8 :D :P
                 
@@ -116,14 +116,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ConceptsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[ConceptsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"infraccion"];
-    cell.textLabel.numberOfLines=15;
+    cell.concepto.text = [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"descripcion"];
+    cell.concepto.numberOfLines=15;
+    [cell.concepto sizeToFit];
+    cell.concepto.frame=CGRectMake(10, 10, self.view.frame.size.width-20, cell.concepto.frame.size.height);
+    
+    cell.monto.frame=CGRectMake(cell.monto.frame.origin.x, cell.concepto.frame.size.height +cell.concepto.frame.origin.y+10, cell.monto.frame.size.width, cell.concepto.frame.size.height);
+        cell.monto.text=[NSString stringWithFormat:@"Monto: $%f", [[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
+    [cell.monto sizeToFit];
+    
+    cell.corralon.frame=CGRectMake(cell.corralon.frame.origin.x, cell.monto.frame.size.height +cell.monto.frame.origin.y+10, cell.corralon.frame.size.width, cell.corralon.frame.size.height);
+    if ([[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"corralon"] isEqualToString:@""]) {
+        cell.corralon.text=@"Amerita corralón: NO";
+    }
+    else
+    cell.corralon.text=[NSString stringWithFormat:@"Amerita corralón: %@", [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"corralon"]];
+    
+    [cell.corralon sizeToFit];
+    
     return cell;
 }
 
@@ -171,9 +187,9 @@
         
         // Else if the airline's name is
         for (NSDictionary *airline in self.conceptos) {
-            if ([[airline[@"infraccion"]uppercaseString] containsString:airlineName] ) {
+            if ([[airline[@"descripcion"]uppercaseString] containsString:airlineName] ) {
                 
-                NSString *str = [NSString stringWithFormat:@"%@", airline[@"infraccion"] /*, airline[@"icao"]*/];
+                NSString *str = [NSString stringWithFormat:@"%@", airline[@"descripcion"] /*, airline[@"icao"]*/];
                 [searchResults addObject:str];
             }
             
@@ -190,10 +206,10 @@
     // CGSize size = [cell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     //return size.height;
     //return UITableViewAutomaticDimension;
-    NSString* text=[[_conceptos objectAtIndex:indexPath.row]objectForKey:@"infraccion"];
+    NSString* text=[[_conceptos objectAtIndex:indexPath.row]objectForKey:@"descripcion"];
     CGSize constraint = CGSizeMake(300 - (10 * 2), 20000.0f);
     // remember change this method for ios  8 :D :P
-    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14]      constrainedToSize:constraint lineBreakMode: NSLineBreakByWordWrapping];
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode: NSLineBreakByWordWrapping];
     
     CGFloat height = MAX(size.height, 44.0f);
     
