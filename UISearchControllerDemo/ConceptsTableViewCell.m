@@ -32,11 +32,12 @@
         float a= [[UIScreen mainScreen] bounds].size.width;
         NSLog(@"%f",a);
         _concepto = [[UILabel alloc] initWithFrame:CGRectMake(10,10,a-20,100)];
-        _concepto.backgroundColor=[UIColor redColor];
+        _concepto.backgroundColor=[UIColor clearColor];
         
         _monto= [[UILabel alloc] initWithFrame:CGRectMake(15,200,a-30,50)];
+        _monto.textColor=[UIColor darkGrayColor];
         _corralon= [[UILabel alloc] initWithFrame:CGRectMake(15,240,a-30,50)];
-        
+           _corralon.textColor=[UIColor darkGrayColor];
         
         [self addSubview:_concepto];
         [self addSubview:_monto];

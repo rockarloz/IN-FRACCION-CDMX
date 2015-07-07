@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07567D401B0B0711007E6B3A /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07567D3F1B0B0711007E6B3A /* DescriptionViewController.m */; };
 		07567D431B0B0CE0007E6B3A /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07567D421B0B0CE0007E6B3A /* RateViewController.m */; };
+		07B020E61B4B73420039BFE3 /* Refresh_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B020E51B4B73420039BFE3 /* Refresh_icon.png */; };
 		07E88B6F1B3769A70024096E /* ConceptsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E88B6E1B3769A70024096E /* ConceptsTableViewCell.m */; };
 		07FA0A561B2FBA1900D63741 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FA0A541B2FBA1900D63741 /* no.png */; };
 		07FA0A571B2FBA1900D63741 /* si.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FA0A551B2FBA1900D63741 /* si.png */; };
@@ -45,6 +46,7 @@
 		07567D3F1B0B0711007E6B3A /* DescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionViewController.m; sourceTree = "<group>"; };
 		07567D411B0B0CE0007E6B3A /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		07567D421B0B0CE0007E6B3A /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
+		07B020E51B4B73420039BFE3 /* Refresh_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh_icon.png; sourceTree = "<group>"; };
 		07E88B6D1B3769A70024096E /* ConceptsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConceptsTableViewCell.h; path = UISearchControllerDemo/ConceptsTableViewCell.h; sourceTree = "<group>"; };
 		07E88B6E1B3769A70024096E /* ConceptsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConceptsTableViewCell.m; path = UISearchControllerDemo/ConceptsTableViewCell.m; sourceTree = "<group>"; };
 		07FA0A541B2FBA1900D63741 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				07FA0A541B2FBA1900D63741 /* no.png */,
+				07B020E51B4B73420039BFE3 /* Refresh_icon.png */,
 				07FA0A551B2FBA1900D63741 /* si.png */,
 				F3EE12971B06856C00CDEC6A /* AgenteTableViewCell.h */,
 				F3EE12981B06856C00CDEC6A /* AgenteTableViewCell.m */,
@@ -289,6 +292,7 @@
 				31433F981A6580E200E3420B /* LaunchScreen.xib in Resources */,
 				F3EE12961B0681EB00CDEC6A /* logo.png in Resources */,
 				07FA0A571B2FBA1900D63741 /* si.png in Resources */,
+				07B020E61B4B73420039BFE3 /* Refresh_icon.png in Resources */,
 				07FA0A561B2FBA1900D63741 /* no.png in Resources */,
 				31433F951A6580E200E3420B /* Images.xcassets in Resources */,
 			);

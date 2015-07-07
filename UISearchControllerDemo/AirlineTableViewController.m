@@ -86,17 +86,15 @@
 }
 - (void)viewDidLoad {
     
-    
-    UIButton *search =  [UIButton buttonWithType:UIButtonTypeInfoLight];
-    //[search setImage:[UIImage imageNamed:@"df.png"] forState:UIControlStateNormal];
+    UIButton *search =  [UIButton buttonWithType:UIButtonTypeCustom];
+     search.tintColor=[UIColor whiteColor];
+    [search setImage:[UIImage imageNamed:@"Refresh_icon.png"] forState:UIControlStateNormal];
     [search addTarget:self action:@selector(UpdateData) forControlEvents:UIControlEventTouchUpInside];
     
-    [search setFrame:CGRectMake(0, 0, 25 , 25)];
+    [search setFrame:CGRectMake(0, 0, 30 , 30)];
     UIBarButtonItem *buscar = [[UIBarButtonItem alloc]initWithCustomView:search];
-    NSMutableArray *a=[[NSMutableArray alloc]initWithObjects:buscar, nil];
-    self.navigationController.topViewController.navigationItem.rightBarButtonItems = a;
-    
-    
+    NSMutableArray *button=[[NSMutableArray alloc]initWithObjects:buscar, nil];
+    self.navigationController.topViewController.navigationItem.rightBarButtonItems = button;
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -110,10 +108,7 @@
    // http://201.144.220.174/infracciones/api/personal/acreditado
     [super viewDidLoad];
     
-    // Get local json file we'll be using to populate our TableView
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"policias_infraccion" ofType:@"json"];
-    
-   }
+    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

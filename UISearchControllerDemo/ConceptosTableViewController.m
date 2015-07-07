@@ -19,16 +19,52 @@
 @end
 
 @implementation ConceptosTableViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void) downloadData{
+    //download the file in a seperate thread.
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"Downloading Started");
+        NSString *urlToDownload = @"http://201.144.220.174/infracciones/api/articulos/articulo_vigente";
+        NSURL  *url = [NSURL URLWithString:urlToDownload];
+        NSData *urlData = [NSData dataWithContentsOfURL:url];
+        if ( urlData )
+        {
+            NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString  *documentsDirectory = [paths objectAtIndex:0];
+            
+            NSString  *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"conceptos.json"];
+            
+            //saving is done on main thread
+            
+            dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [urlData writeToFile:filePath atomically:YES];
+                NSLog(@"File Saved !");
+                UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Lista Descagarda" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+                [a show];
+                [self search];
+            });
+        }
+        
+    });
     
-    // Get local json file we'll be using to populate our TableView
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"policias_infraccion" ofType:@"json"];
+}
+
+
+-(void)UpdateData{
+    [self downloadData];
+}
+
+-(void)search{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"conceptos.json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-   // self.conceptos = dict[@"policias"];
+    self.conceptos = dict;
+    
+    // There's no transition in our storyboard to our search results tableview or navigation controller
+    // so we'll have to grab it using the instantiateViewControllerWithIdentifier: method
+  
     
     // There's no transition in our storyboard to our search results tableview or navigation controller
     // so we'll have to grab it using the instantiateViewControllerWithIdentifier: method
@@ -49,10 +85,45 @@
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.searchController.searchBar.placeholder=@"Busca tu infracción";
     self.searchController.searchBar.barTintColor =  [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
-
+    
     self.searchController.searchBar.backgroundColor =  [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
 
-    [self getData];
+    
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    
+    UIButton *search =  [UIButton buttonWithType:UIButtonTypeCustom];
+    search.tintColor=[UIColor whiteColor];
+    [search setImage:[UIImage imageNamed:@"Refresh_icon.png"] forState:UIControlStateNormal];
+    [search addTarget:self action:@selector(UpdateData) forControlEvents:UIControlEventTouchUpInside];
+    
+    [search setFrame:CGRectMake(0, 0, 30 , 30)];
+    UIBarButtonItem *buscar = [[UIBarButtonItem alloc]initWithCustomView:search];
+    NSMutableArray *button=[[NSMutableArray alloc]initWithObjects:buscar, nil];
+    self.navigationController.topViewController.navigationItem.rightBarButtonItems = button;
+    
+    // Get local json file we'll be using to populate our TableView
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"policias_infraccion" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSError *error;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+   // self.conceptos = dict[@"policias"];
+    
+
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* foofile = [documentsDirectory stringByAppendingPathComponent:@"conceptos.json"];
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:foofile];
+    
+    if (fileExists) {
+        [self search];
+    }else
+        [self downloadData];
+    
+    
+    //[self getData];
 }
 -(void)getData{
     _conceptos=[[NSMutableArray alloc]init];
@@ -189,8 +260,20 @@
         for (NSDictionary *airline in self.conceptos) {
             if ([[airline[@"descripcion"]uppercaseString] containsString:airlineName] ) {
                 
+                
+                NSMutableDictionary *data=[[NSMutableDictionary alloc]init];
                 NSString *str = [NSString stringWithFormat:@"%@", airline[@"descripcion"] /*, airline[@"icao"]*/];
-                [searchResults addObject:str];
+                NSString *plt = [NSString stringWithFormat:@"%@", airline[@"corralon"] /*, airline[@"icao"]*/];
+                 NSString *dias = [NSString stringWithFormat:@"%@", airline[@"dias_sansion"] /*, airline[@"icao"]*/];
+                [data setObject:str forKey:@"descripcion"];
+                [data setObject:plt forKey:@"corralon"];
+                [data setObject:dias forKey:@"dias_sansion"];
+                [searchResults addObject:data];
+
+                
+                
+              //  NSString *str = [NSString stringWithFormat:@"%@", airline[@"descripcion"] /*, airline[@"icao"]*/];
+               // [searchResults addObject:str];
             }
             
             self.searchResults = searchResults;
@@ -218,7 +301,11 @@
     return height + (10 * 14.5);
 }
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.navigationController.topViewController.navigationItem.title=@"Conceptos";
+    self.navigationController.navigationBar.backItem.title=@"";
+}
 
 
 

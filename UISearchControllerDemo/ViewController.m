@@ -102,6 +102,18 @@
     
       self.view.backgroundColor=[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
     
+
+    //[ self.navigationController.navigationBar setTranslucent:NO];
+    self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
+    [ self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1]];
+    
+    
+   [[[ self navigationController] navigationBar] setBarStyle:UIBarStyleBlackTranslucent];
+    
+   // [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    //self.navigationController.topViewController.navigationItem.title=@"";
+
 }
 
 - (void)didReceiveMemoryWarning {

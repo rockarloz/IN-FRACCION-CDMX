@@ -10,6 +10,7 @@
 
 #import "SearchResultsTableViewController.h"
 #import "AgenteTableViewCell.h"
+#import "DescriptionViewController.h"
 @interface SearchResultsTableViewController ()
 
 @property (nonatomic, strong) NSArray *array;
@@ -35,6 +36,14 @@
     
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DescriptionViewController *des=[[DescriptionViewController alloc]init];
+    des.name=[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"name"];
+    des.plate = [NSString stringWithFormat:@"Placa:%@",[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"plate"] ];
+    
+    // debo de hacer un nuevo navigation controller
+    [self.navigationController pushViewController:des animated:NO];
+    
+}
 
 @end
