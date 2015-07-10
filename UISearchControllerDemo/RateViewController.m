@@ -60,7 +60,9 @@
    
     _pagecontrol=[[UIPageControl alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-40, self.view.frame.size.height-20, 80, 10)];
     _pagecontrol.tintColor=[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
-    _pagecontrol.backgroundColor=[UIColor redColor];
+    _pagecontrol.pageIndicatorTintColor =[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
+    _pagecontrol.currentPageIndicatorTintColor = [UIColor greenColor];
+    _pagecontrol.backgroundColor=[UIColor clearColor];
 
     
     _pagecontrol.numberOfPages=paginas;
@@ -73,34 +75,35 @@
             texto.text=@"¿El oficial se identificó con su nombre y número de placa?";
              texto.textAlignment=NSTextAlignmentCenter;
             [texto sizeToFit];
+            texto.frame=CGRectMake(texto.frame.origin.x, 10, self.view.frame.size.width-30, texto.frame.size.height);
             texto.textColor=[UIColor grayColor];
            
             [scroll addSubview:texto];
             
-            
-            
+        
             
             UIButton *paloma=[UIButton buttonWithType:UIButtonTypeCustom];
-            paloma.frame= CGRectMake(self.view.frame.size.width/2-90, texto.frame.size.height+texto.frame.origin.y+20,60, 60);
+            paloma.frame= CGRectMake(self.view.frame.size.width/2-90, texto.frame.size.height+texto.frame.origin.y+50,60, 60);
+            paloma.tag=1;
             [paloma addTarget:self
-                       action:@selector(positive)
+                       action:@selector(identificacion:)
              forControlEvents:UIControlEventTouchUpInside];
             [scroll addSubview:paloma];
             UIImage *btnImage = [UIImage imageNamed:@"si.png"];
             [paloma setImage:btnImage forState:UIControlStateNormal];
-            paloma.backgroundColor=[UIColor redColor];
+            paloma.backgroundColor=[UIColor clearColor];
             
             
             UIButton *tache=[UIButton buttonWithType:UIButtonTypeCustom];
-            
-            tache.frame= CGRectMake(self.view.frame.size.width/2+30, texto.frame.size.height+texto.frame.origin.y+20, 60, 60);
+            tache.tag=2;
+            tache.frame= CGRectMake(self.view.frame.size.width/2+30, texto.frame.size.height+texto.frame.origin.y+50, 60, 60);
             [tache addTarget:self
-                       action:@selector(negative)
+                       action:@selector(identificacion:)
              forControlEvents:UIControlEventTouchUpInside];
             [scroll addSubview:tache];
             UIImage *btnImage2 = [UIImage imageNamed:@"no.png"];
             [tache setImage:btnImage2 forState:UIControlStateNormal];
-            tache.backgroundColor=[UIColor redColor];
+            tache.backgroundColor=[UIColor clearColor];
             
             
             
@@ -110,36 +113,180 @@
             UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
             texto.numberOfLines=3;
             texto.text=@"¿El oficial señaló la infracción cometida?";
+             texto.textAlignment=NSTextAlignmentCenter;
             [texto sizeToFit];
+                     texto.frame=CGRectMake(texto.frame.origin.x, 10, self.view.frame.size.width-30, texto.frame.size.height);
+            texto.textColor=[UIColor grayColor];
+            
             [scroll addSubview:texto];
+            
+            
+            
+            UIButton *paloma=[UIButton buttonWithType:UIButtonTypeCustom];
+            paloma.frame= CGRectMake(self.view.frame.size.width/2-90+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50,60, 60);
+            paloma.tag=1;
+            [paloma addTarget:self
+                       action:@selector(infraccion:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:paloma];
+            UIImage *btnImage = [UIImage imageNamed:@"si.png"];
+            [paloma setImage:btnImage forState:UIControlStateNormal];
+            paloma.backgroundColor=[UIColor clearColor];
+            
+            
+            UIButton *tache=[UIButton buttonWithType:UIButtonTypeCustom];
+            tache.tag=2;
+            tache.frame= CGRectMake(self.view.frame.size.width/2+30+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50, 60, 60);
+            [tache addTarget:self
+                      action:@selector(infraccion:)
+            forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:tache];
+            UIImage *btnImage2 = [UIImage imageNamed:@"no.png"];
+            [tache setImage:btnImage2 forState:UIControlStateNormal];
+            tache.backgroundColor=[UIColor clearColor];
         }
         else if (i==2) {
             UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
             texto.numberOfLines=3;
             texto.text=@"¿El oficial mostró el articulo del reglamento que lo fundamenta?";
+             texto.textAlignment=NSTextAlignmentCenter;
             [texto sizeToFit];
+                        texto.frame=CGRectMake(texto.frame.origin.x, 10, self.view.frame.size.width-30, texto.frame.size.height);
+            texto.textColor=[UIColor grayColor];
+            
             [scroll addSubview:texto];
+            
+            
+            UIButton *paloma=[UIButton buttonWithType:UIButtonTypeCustom];
+            paloma.frame= CGRectMake(self.view.frame.size.width/2-90+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50,60, 60);
+            paloma.tag=1;
+            [paloma addTarget:self
+                       action:@selector(articulo:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:paloma];
+            UIImage *btnImage = [UIImage imageNamed:@"si.png"];
+            [paloma setImage:btnImage forState:UIControlStateNormal];
+            paloma.backgroundColor=[UIColor clearColor];
+            
+            
+            UIButton *tache=[UIButton buttonWithType:UIButtonTypeCustom];
+            tache.tag=2;
+            tache.frame= CGRectMake(self.view.frame.size.width/2+30+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50, 60, 60);
+
+            [tache addTarget:self
+                      action:@selector(articulo:)
+            forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:tache];
+            UIImage *btnImage2 = [UIImage imageNamed:@"no.png"];
+            [tache setImage:btnImage2 forState:UIControlStateNormal];
+            tache.backgroundColor=[UIColor clearColor];
+
         }
         else if (i==3) {
             UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
             texto.numberOfLines=3;
             texto.text=@"¿La sanción coincidió con la infracción mostrada?";
+             texto.textAlignment=NSTextAlignmentCenter;
             [texto sizeToFit];
+                        texto.frame=CGRectMake(texto.frame.origin.x, 10, self.view.frame.size.width-30, texto.frame.size.height);
+            texto.textColor=[UIColor grayColor];
+            
             [scroll addSubview:texto];
+            
+         
+            
+            UIButton *paloma=[UIButton buttonWithType:UIButtonTypeCustom];
+            paloma.frame= CGRectMake(self.view.frame.size.width/2-90+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50,60, 60);
+            paloma.tag=1;
+            [paloma addTarget:self
+                       action:@selector(coincidio:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:paloma];
+            UIImage *btnImage = [UIImage imageNamed:@"si.png"];
+            [paloma setImage:btnImage forState:UIControlStateNormal];
+            paloma.backgroundColor=[UIColor clearColor];
+            
+            
+            UIButton *tache=[UIButton buttonWithType:UIButtonTypeCustom];
+            tache.tag=2;
+            tache.frame= CGRectMake(self.view.frame.size.width/2+30+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50, 60, 60);
+
+            [tache addTarget:self
+                      action:@selector(coincidio:)
+            forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:tache];
+            UIImage *btnImage2 = [UIImage imageNamed:@"no.png"];
+            [tache setImage:btnImage2 forState:UIControlStateNormal];
+            tache.backgroundColor=[UIColor clearColor];
         }
         else if (i==4) {
             UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
             texto.numberOfLines=3;
             texto.text=@"¿El oficial solicitó y devolvió documentos?";
+             texto.textAlignment=NSTextAlignmentCenter;
             [texto sizeToFit];
+                        texto.frame=CGRectMake(texto.frame.origin.x, 10, self.view.frame.size.width-30, texto.frame.size.height);
+            texto.textColor=[UIColor grayColor];
+            
             [scroll addSubview:texto];
+            
+   
+            
+            UIButton *paloma=[UIButton buttonWithType:UIButtonTypeCustom];
+            paloma.frame= CGRectMake(self.view.frame.size.width/2-90+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50,60, 60);
+            paloma.tag=1;
+            [paloma addTarget:self
+                       action:@selector(documentos:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:paloma];
+            UIImage *btnImage = [UIImage imageNamed:@"si.png"];
+            [paloma setImage:btnImage forState:UIControlStateNormal];
+            paloma.backgroundColor=[UIColor clearColor];
+            
+            UIButton *tache=[UIButton buttonWithType:UIButtonTypeCustom];
+            tache.tag=2;
+            tache.frame= CGRectMake(self.view.frame.size.width/2+30+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50, 60, 60);
+
+            [tache addTarget:self
+                      action:@selector(documentos:)
+            forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:tache];
+            UIImage *btnImage2 = [UIImage imageNamed:@"no.png"];
+            [tache setImage:btnImage2 forState:UIControlStateNormal];
+            tache.backgroundColor=[UIColor clearColor];
         }
         else if (i==5) {
             UILabel *texto=[[UILabel alloc]initWithFrame:CGRectMake((scroll.frame.size.width * i)+15,10 ,self.view.frame.size.width-30,40)];
             texto.numberOfLines=3;
             texto.text=@"¿El oficial entregó copia de la infracción?";
+             texto.textColor=[UIColor grayColor];
+             texto.textAlignment=NSTextAlignmentCenter;
             [texto sizeToFit];
+                        texto.frame=CGRectMake(texto.frame.origin.x, 10, self.view.frame.size.width-30, texto.frame.size.height);
             [scroll addSubview:texto];
+            
+            UIButton *paloma=[UIButton buttonWithType:UIButtonTypeCustom];
+            paloma.frame= CGRectMake(self.view.frame.size.width/2-90+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50,60, 60);
+            paloma.tag=1;
+            [paloma addTarget:self
+                       action:@selector(copia:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:paloma];
+            UIImage *btnImage = [UIImage imageNamed:@"si.png"];
+            [paloma setImage:btnImage forState:UIControlStateNormal];
+            paloma.backgroundColor=[UIColor clearColor];
+            
+            UIButton *tache=[UIButton buttonWithType:UIButtonTypeCustom];
+            tache.tag=2;
+            tache.frame= CGRectMake(self.view.frame.size.width/2+30+(self.view.frame.size.width*i), texto.frame.size.height+texto.frame.origin.y+50, 60, 60);
+            
+            [tache addTarget:self
+                      action:@selector(copia:)
+            forControlEvents:UIControlEventTouchUpInside];
+            [scroll addSubview:tache];
+            UIImage *btnImage2 = [UIImage imageNamed:@"no.png"];
+            [tache setImage:btnImage2 forState:UIControlStateNormal];
+            tache.backgroundColor=[UIColor clearColor];
         }
     }
     
@@ -167,18 +314,58 @@
 }
 
 
--(void)positive{
-
+-(IBAction)identificacion:(id)sender{
+    UIButton *a=(UIButton *)sender;
+    NSLog(@"%ld",(long)a.tag);
+    identificacion=a.tag;
  [scroll setContentOffset:CGPointMake(self.view.frame.size.width*1, 0) animated:YES];
 
 }
--(void)negative{
- [scroll setContentOffset:CGPointMake(self.view.frame.size.width*1, 0) animated:YES];
 
+-(IBAction)infraccion:(id)sender{
+    UIButton *a=(UIButton *)sender;
+    NSLog(@"%ld",(long)a.tag);
+    infraccion=a.tag;
+    [scroll setContentOffset:CGPointMake(self.view.frame.size.width*2, 0) animated:YES];
+    
 }
+-(IBAction)articulo:(id)sender{
+    UIButton *a=(UIButton *)sender;
+    NSLog(@"%ld",(long)a.tag);
+    articulo=a.tag;
+    [scroll setContentOffset:CGPointMake(self.view.frame.size.width*3, 0) animated:YES];
+    
+}
+-(IBAction)coincidio:(id)sender{
+    UIButton *a=(UIButton *)sender;
+    NSLog(@"%ld",(long)a.tag);
+    coincidio=a.tag;
+    [scroll setContentOffset:CGPointMake(self.view.frame.size.width*4, 0) animated:YES];
+    
+}
+-(IBAction)documentos:(id)sender{
+    UIButton *a=(UIButton *)sender;
+    NSLog(@"%ld",(long)a.tag);
+    documentos=a.tag;
+    [scroll setContentOffset:CGPointMake(self.view.frame.size.width*5, 0) animated:YES];
+    
+}
+
+-(IBAction)copia:(id)sender{
+    UIButton *a=(UIButton *)sender;
+    NSLog(@"%ld",(long)a.tag);
+    copia=a.tag;
+   // [scroll setContentOffset:CGPointMake(self.view.frame.size.width*5, 0) animated:YES];
+    [self makeURL];
+    
+}
+
+
+
 -(void)makeURL{
 
-    NSString *url=[NSString stringWithFormat:@"http://infracciones.herokuapp.com//cops/new?identification=1&infraccion=1&articulo=1&coincidio=1&documents=1&copy=1&latitude=19.4394829&longitude=-99.1823385&cop_id=830625"];
+    NSString *url=[NSString stringWithFormat:@"http://infracciones.herokuapp.com//cops/new?identification=%i&infraccion=%i&articulo=%i&coincidio=%i&documents=%i&copy=%i&latitude=19.4394829&longitude=-99.1823385&cop_id=830625",identificacion,infraccion,articulo,coincidio,documentos,coincidio];
+    NSLog(@"%@",url);
 
 }
 /*

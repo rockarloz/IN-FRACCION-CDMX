@@ -31,7 +31,7 @@
     NSMutableArray *as=[[NSMutableArray alloc]initWithObjects:buscar, nil];
     self.navigationController.topViewController.navigationItem.rightBarButtonItems = as;
     
-    UIImageView *img=[[UIImageView alloc]initWithFrame:CGRectMake(25, 100,self.view.frame.size.width -50 , 60)];
+    UIImageView *img=[[UIImageView alloc]initWithFrame:CGRectMake(40, 70,self.view.frame.size.width- 80 , 50)];
     img.image=[UIImage imageNamed:@"logo.png"];
     [self.view addSubview:img];
     

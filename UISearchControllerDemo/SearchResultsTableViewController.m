@@ -40,10 +40,15 @@
     DescriptionViewController *des=[[DescriptionViewController alloc]init];
     des.name=[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"name"];
     des.plate = [NSString stringWithFormat:@"Placa:%@",[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"plate"] ];
-    
+    des.from=@"search";
     // debo de hacer un nuevo navigation controller
-    [self.navigationController pushViewController:des animated:NO];
     
+    UINavigationController *auxNav=[[UINavigationController alloc]initWithRootViewController:des];
+    
+   // UIWindow* currentWindow = [UIApplication sharedApplication].keyWindow;
+ //[self.navigationController pushViewController:des  animated:NO];
+    
+    [self presentViewController:auxNav animated:NO completion:nil];
 }
 
 @end

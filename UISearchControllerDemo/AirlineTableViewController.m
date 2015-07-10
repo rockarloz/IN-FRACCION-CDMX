@@ -79,10 +79,15 @@
     self.searchController.searchBar.barTintColor = [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
     self.searchController.searchBar.backgroundColor = [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
     self.searchController.searchBar.tintColor= [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
-    
+    self.searchController.delegate=self;
     self.tableView.tableHeaderView = self.searchController.searchBar;
 
 
+}
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    
+    // Here write the code to push to new view controller
+    return NO;
 }
 - (void)viewDidLoad {
     

@@ -11,4 +11,5 @@
 @interface DescriptionViewController : ViewController
 @property (nonatomic , retain) NSString *name;
 @property (nonatomic , retain) NSString *plate;
+@property (nonatomic, retain)NSString *from;
 @end

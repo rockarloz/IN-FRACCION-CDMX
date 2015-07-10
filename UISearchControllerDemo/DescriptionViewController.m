@@ -82,6 +82,31 @@
     [super viewDidAppear:animated];
     self.navigationController.topViewController.navigationItem.title=@"Detalles";
     self.navigationController.navigationBar.backItem.title=@"";
+    
+    self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
+    [ self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1]];
+    
+    
+    [[[ self navigationController] navigationBar] setBarStyle:UIBarStyleBlackTranslucent];
+    
+    if ([_from isEqualToString:@"search"]) {
+        
+        UIButton *search =  [UIButton buttonWithType:UIButtonTypeCustom];
+        search.tintColor=[UIColor whiteColor];
+        [search setImage:[UIImage imageNamed:@"atras.png"] forState:UIControlStateNormal];
+        [search addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        
+        [search setFrame:CGRectMake(0, 0, 30 , 30)];
+        UIBarButtonItem *buscar = [[UIBarButtonItem alloc]initWithCustomView:search];
+        NSMutableArray *button=[[NSMutableArray alloc]initWithObjects:buscar, nil];
+        self.navigationController.topViewController.navigationItem.leftBarButtonItems = button;
+    }
+   
+}
+
+-(void)back{
+
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 /*
 #pragma mark - Navigation
