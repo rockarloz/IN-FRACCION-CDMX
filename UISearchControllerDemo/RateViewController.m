@@ -368,6 +368,34 @@
     NSLog(@"%@",url);
 
 }
+
+-(void) sendData{
+    //download the file in a seperate thread.
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"Downloading Started");
+        NSString *urlToDownload = @"http://201.144.220.174/infracciones/api/personal/acreditado";
+        NSURL  *url = [NSURL URLWithString:urlToDownload];
+        NSData *urlData = [NSData dataWithContentsOfURL:url];
+        if ( urlData )
+        {
+            NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString  *documentsDirectory = [paths objectAtIndex:0];
+            
+            NSString  *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"policias.json"];
+            
+         
+            dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [urlData writeToFile:filePath atomically:YES];
+                NSLog(@"File Saved !");
+                UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Lista Descagarda" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+                [a show];
+              
+            });
+        }
+        
+    });
+    
+}
 /*
 #pragma mark - Navigation
 

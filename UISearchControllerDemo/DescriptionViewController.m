@@ -18,31 +18,31 @@
 
 - (void)viewDidLoad {
    // [super viewDidLoad];
-    UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(10, 84, self.view.frame.size.width-20, 100)];
+    UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(15, 84, self.view.frame.size.width-30, 100)];
     name.text=_name;
     name.numberOfLines=3;
-    [name setFont:[UIFont boldSystemFontOfSize:28]];
+    [name setFont:[UIFont fontWithName:@"OpenSans-Bold" size:28]];
     name.textColor=[UIColor grayColor];
     [self.view addSubview:name];
     [name sizeToFit];
     
-    UILabel *plate=[[UILabel alloc]initWithFrame:CGRectMake(10, name.frame.size.height+name.frame.origin.y+10, self.view.frame.size.width-20, 100)];
+    UILabel *plate=[[UILabel alloc]initWithFrame:CGRectMake(15, name.frame.size.height+name.frame.origin.y+15, self.view.frame.size.width-30, 100)];
     plate.text=_plate;
     plate.textColor=[UIColor lightGrayColor];
     plate.numberOfLines=3;
-    [plate setFont:[UIFont boldSystemFontOfSize:27]];
+   [plate setFont:[UIFont fontWithName:@"OpenSans-Bold" size:26]];
     [self.view addSubview:plate];
     [plate sizeToFit];
     
-    UIView *line=[[UIView alloc]initWithFrame:CGRectMake(10,  plate.frame.size.height+plate.frame.origin.y+10, self.view.frame.size.width-20, 5)];
+    UIView *line=[[UIView alloc]initWithFrame:CGRectMake(15,  plate.frame.size.height+plate.frame.origin.y+20, self.view.frame.size.width-30, 3)];
     line.backgroundColor=[UIColor yellowColor];
     [self.view addSubview:line];
     
-    UILabel *txt=[[UILabel alloc]initWithFrame:CGRectMake(10, line.frame.size.height+line.frame.origin.y+10, self.view.frame.size.width-20, 100)];
+    UILabel *txt=[[UILabel alloc]initWithFrame:CGRectMake(15, line.frame.size.height+line.frame.origin.y+30, self.view.frame.size.width-30, 100)];
     txt.text=@"Este agente sí tiene la facultad para infracionarte.";
     txt.textColor=[UIColor blackColor];
     txt.numberOfLines=3;
-    [txt setFont:[UIFont boldSystemFontOfSize:15]];
+    [txt setFont:[UIFont boldSystemFontOfSize:18]];
     [self.view addSubview:txt];
     [txt sizeToFit];
     
@@ -55,7 +55,7 @@
     lbl.text=@"Evalúa el proceso de infracción.";
     lbl.textAlignment=NSTextAlignmentCenter;
     lbl.textColor=[UIColor blackColor];
-    [lbl setFont:[UIFont boldSystemFontOfSize:14]];
+      [lbl setFont:[UIFont fontWithName:@"OpenSans-Bold" size:16]];
     [btn addSubview:lbl];
     [self.view addSubview:btn];
     

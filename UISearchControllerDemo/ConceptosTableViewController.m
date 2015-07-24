@@ -107,8 +107,9 @@
     // Get local json file we'll be using to populate our TableView
     NSString *path = [[NSBundle mainBundle] pathForResource:@"policias_infraccion" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
+    
     NSError *error;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+   // NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
    // self.conceptos = dict[@"policias"];
     
 

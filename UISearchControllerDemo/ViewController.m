@@ -31,7 +31,7 @@
     NSMutableArray *as=[[NSMutableArray alloc]initWithObjects:buscar, nil];
     self.navigationController.topViewController.navigationItem.rightBarButtonItems = as;
     
-    UIImageView *img=[[UIImageView alloc]initWithFrame:CGRectMake(40, 70,self.view.frame.size.width- 80 , 50)];
+    UIImageView *img=[[UIImageView alloc]initWithFrame:CGRectMake(40, 70,self.view.frame.size.width- 80 , 45)];
     img.image=[UIImage imageNamed:@"logo.png"];
     [self.view addSubview:img];
     
@@ -41,6 +41,7 @@
     [self.view addSubview:a];
     UILabel *lbl1=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, a.frame.size.width, 35)];
     lbl1.text=@"¿Te puede infraccionar?";
+    [lbl1 setFont:[UIFont fontWithName:@"OpenSans-Bold" size:17]];
     lbl1.textAlignment=NSTextAlignmentCenter;
     [a addSubview:lbl1];
     UIView *linea1=[[UIView alloc]initWithFrame:CGRectMake(10, 36, a.frame.size.width-20, 3)];
@@ -48,9 +49,10 @@
     [a addSubview:linea1];
     
     UILabel *desc1=[[UILabel alloc]initWithFrame:CGRectMake(0, linea1.frame.origin.y+linea1.frame.size.height, a.frame.size.width, 35)];
+    [desc1 setFont:[UIFont fontWithName:@"OpenSans-Semibold" size:12]];
     desc1.text=@"Consulta la lista oficial de tránsito que puede infraccionarte.";
     desc1.numberOfLines=5;
-    desc1.font=[UIFont systemFontOfSize:12];
+   
     desc1.textColor=[UIColor lightGrayColor];
     desc1.textAlignment=NSTextAlignmentCenter;
     [a addSubview:desc1];
@@ -74,6 +76,7 @@
     
     UILabel *lbl2=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, a.frame.size.width, 35)];
     lbl2.text=@"Consulta tu infracción";
+     [lbl2 setFont:[UIFont fontWithName:@"OpenSans-Bold" size:17]];
     lbl2.textAlignment=NSTextAlignmentCenter;
     [b addSubview:lbl2];
     UIView *linea2=[[UIView alloc]initWithFrame:CGRectMake(10, 36, a.frame.size.width-20, 3)];
@@ -83,7 +86,7 @@
     UILabel *desc2=[[UILabel alloc]initWithFrame:CGRectMake(0, linea2.frame.origin.y+linea2.frame.size.height, a.frame.size.width, 35)];
     desc2.text=@"Consulta la multa que debes pagar por la infracción que cometiste.";
     desc2.numberOfLines=5;
-    desc2.font=[UIFont systemFontOfSize:12];
+    [desc2 setFont:[UIFont fontWithName:@"OpenSans-Semibold" size:12]];
     desc2.textColor=[UIColor lightGrayColor];
     desc2.textAlignment=NSTextAlignmentCenter;
     [b addSubview:desc2];

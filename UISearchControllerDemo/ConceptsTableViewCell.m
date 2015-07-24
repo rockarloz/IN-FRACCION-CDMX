@@ -33,7 +33,7 @@
         NSLog(@"%f",a);
         _concepto = [[UILabel alloc] initWithFrame:CGRectMake(10,10,a-20,100)];
         _concepto.backgroundColor=[UIColor clearColor];
-        
+         [_concepto setFont:[UIFont fontWithName:@"OpenSans-Bold" size:17]];
         _monto= [[UILabel alloc] initWithFrame:CGRectMake(15,200,a-30,50)];
         _monto.textColor=[UIColor darkGrayColor];
         _corralon= [[UILabel alloc] initWithFrame:CGRectMake(15,240,a-30,50)];
