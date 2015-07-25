@@ -201,6 +201,7 @@
     
     cell.monto.frame=CGRectMake(cell.monto.frame.origin.x, cell.concepto.frame.size.height +cell.concepto.frame.origin.y+10, cell.monto.frame.size.width, cell.concepto.frame.size.height);
         cell.monto.text=[NSString stringWithFormat:@"Monto: $%f", [[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
+    cell.monto.text=[NSString stringWithFormat:@"Artículo %@ fracción %@",[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"articulo"],[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"fraccion"]];
     [cell.monto sizeToFit];
     
     cell.corralon.frame=CGRectMake(cell.corralon.frame.origin.x, cell.monto.frame.size.height +cell.monto.frame.origin.y+10, cell.corralon.frame.size.width, cell.corralon.frame.size.height);
@@ -209,6 +210,7 @@
     }
     else
     cell.corralon.text=[NSString stringWithFormat:@"Amerita corralón: %@", [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"corralon"]];
+    cell.corralon.text=[NSString stringWithFormat:@"$%f", [[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
     
     [cell.corralon sizeToFit];
     
@@ -264,11 +266,13 @@
                 
                 NSMutableDictionary *data=[[NSMutableDictionary alloc]init];
                 NSString *str = [NSString stringWithFormat:@"%@", airline[@"descripcion"] /*, airline[@"icao"]*/];
-                NSString *plt = [NSString stringWithFormat:@"%@", airline[@"corralon"] /*, airline[@"icao"]*/];
+                NSString *plt = [NSString stringWithFormat:@"%@", airline[@"articulo"] /*, airline[@"icao"]*/];
                  NSString *dias = [NSString stringWithFormat:@"%@", airline[@"dias_sansion"] /*, airline[@"icao"]*/];
+                NSString *dias1 = [NSString stringWithFormat:@"%@", airline[@"fraccion"]];
                 [data setObject:str forKey:@"descripcion"];
-                [data setObject:plt forKey:@"corralon"];
+                [data setObject:plt forKey:@"articulo"];
                 [data setObject:dias forKey:@"dias_sansion"];
+                [data setObject:dias1 forKey:@"fraccion"];
                 [searchResults addObject:data];
 
                 
@@ -293,14 +297,13 @@
     NSString* text=[[_conceptos objectAtIndex:indexPath.row]objectForKey:@"descripcion"];
     CGSize constraint = CGSizeMake(300 - (10 * 2), 20000.0f);
     // remember change this method for ios  8 :D :P
-    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode: NSLineBreakByWordWrapping];
+    CGSize size = [text sizeWithFont:[UIFont fontWithName:@"OpenSans-Bold" size:17] constrainedToSize:constraint lineBreakMode: NSLineBreakByWordWrapping];
     
     CGFloat height = MAX(size.height, 44.0f);
-    
-    
-    
-    return height + (10 * 14.5);
+ 
+    return height + (10 * 8.5);
 }
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

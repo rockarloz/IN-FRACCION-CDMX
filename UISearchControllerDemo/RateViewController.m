@@ -7,7 +7,7 @@
 //
 
 #import "RateViewController.h"
-
+#import <AFHTTPRequestOperationManager.h>
 @interface RateViewController ()
 
 @end
@@ -366,7 +366,32 @@
 
     NSString *url=[NSString stringWithFormat:@"http://infracciones.herokuapp.com//cops/new?identification=%i&infraccion=%i&articulo=%i&coincidio=%i&documents=%i&copy=%i&latitude=19.4394829&longitude=-99.1823385&cop_id=830625",identificacion,infraccion,articulo,coincidio,documentos,coincidio];
     NSLog(@"%@",url);
-
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
+        
+        for (NSDictionary *item in responseObject) {
+          
+       
+        if ([[item objectForKey:@"aviso"]isEqualToString:@"OK"]) {
+            UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Gracias por enviar tu evaluación" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+            [a show];
+            [self.navigationController popToRootViewControllerAnimated:NO];
+            
+        }
+        else{
+            UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Error al enviar tu evaluación" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+            [a show];
+        }
+         }
+        
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error %@", error);
+       
+        UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Error al enviar tu evaluación" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+        [a show];
+        
+    }];
+    
 }
 
 -(void) sendData{

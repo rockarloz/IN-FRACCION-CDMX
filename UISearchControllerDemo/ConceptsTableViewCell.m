@@ -37,7 +37,7 @@
         _monto= [[UILabel alloc] initWithFrame:CGRectMake(15,200,a-30,50)];
         _monto.textColor=[UIColor darkGrayColor];
         _corralon= [[UILabel alloc] initWithFrame:CGRectMake(15,240,a-30,50)];
-           _corralon.textColor=[UIColor darkGrayColor];
+           _corralon.textColor=[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
         
         [self addSubview:_concepto];
         [self addSubview:_monto];

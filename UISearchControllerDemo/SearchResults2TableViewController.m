@@ -39,6 +39,7 @@
     
     cell.monto.frame=CGRectMake(cell.monto.frame.origin.x, cell.concepto.frame.size.height +cell.concepto.frame.origin.y+10, cell.monto.frame.size.width, cell.concepto.frame.size.height);
     cell.monto.text=[NSString stringWithFormat:@"Monto: $%f", [[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
+     cell.monto.text=[NSString stringWithFormat:@"Artículo %@ fracción %@",[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"articulo"],[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"fraccion"]];
     [cell.monto sizeToFit];
     
     cell.corralon.frame=CGRectMake(cell.corralon.frame.origin.x, cell.monto.frame.size.height +cell.monto.frame.origin.y+10, cell.corralon.frame.size.width, cell.corralon.frame.size.height);
@@ -47,6 +48,9 @@
     }
     else
         cell.corralon.text=[NSString stringWithFormat:@"Amerita corralón: %@", [[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"corralon"]];
+    
+    cell.corralon.text=[NSString stringWithFormat:@"$%f", [[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
+    
     
     [cell.corralon sizeToFit];
     
@@ -66,13 +70,13 @@
     NSString* text=[[_searchResults objectAtIndex:indexPath.row]objectForKey:@"descripcion"];
     CGSize constraint = CGSizeMake(300 - (10 * 2), 20000.0f);
     // remember change this method for ios  8 :D :P
-    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode: NSLineBreakByWordWrapping];
+    CGSize size = [text sizeWithFont:[UIFont fontWithName:@"OpenSans-Bold" size:17] constrainedToSize:constraint lineBreakMode: NSLineBreakByWordWrapping];
     
     CGFloat height = MAX(size.height, 44.0f);
     
     
     
-    return height + (10 * 14.5);
+    return height + (10 * 8.5);
 }
 
 
