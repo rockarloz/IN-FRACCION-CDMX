@@ -31,8 +31,8 @@
 {
     AgenteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
     
-    cell.nombre.text = [self.searchResults[indexPath.row]objectForKey:@"name"];
-     cell.placa.text = [self.searchResults[indexPath.row]objectForKey:@"plate"];
+    cell.nombre.text =[ [self.searchResults[indexPath.row]objectForKey:@"name"]capitalizedString];
+     cell.placa.text =[NSString stringWithFormat:@"Placa: %@", [self.searchResults[indexPath.row]objectForKey:@"plate"]];
     
     return cell;
 }
