@@ -131,7 +131,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AgenteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Airline" forIndexPath:indexPath];
-    cell.nombre.text = [[self.airlines objectAtIndex:indexPath.row] objectForKey:@"nombre_completo"];
+    cell.nombre.text = [[[self.airlines objectAtIndex:indexPath.row] objectForKey:@"nombre_completo"] capitalizedString];
     cell.nombre.numberOfLines=2;
     cell.placa.text = [NSString stringWithFormat:@"Placa:%@",[[self.airlines objectAtIndex:indexPath.row] objectForKey:@"placa"] ];
     

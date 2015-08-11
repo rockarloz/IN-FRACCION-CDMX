@@ -5,6 +5,19 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Airline Table View Controller-->
         <scene sceneID="XXq-kU-f57">
@@ -22,13 +35,13 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGQ-3y-un1">
                                             <rect key="frame" x="19" y="13" width="293" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMo-cU-L8e">
                                             <rect key="frame" x="19" y="39" width="293" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -68,14 +81,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yU6-jD-dvr">
-                                            <rect key="frame" x="12" y="37" width="293" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="19" y="37" width="293" height="21"/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTH-eT-pwc">
-                                            <rect key="frame" x="12" y="8" width="293" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <rect key="frame" x="19" y="8" width="293" height="21"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -189,20 +202,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1t-wP-1nK">
-                                            <rect key="frame" x="10" y="8" width="300" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <rect key="frame" x="8" y="8" width="300" height="21"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl4-Vc-GnM">
                                             <rect key="frame" x="8" y="58" width="304" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIr-d5-eG3">
-                                            <rect key="frame" x="10" y="101" width="302" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="8" y="101" width="302" height="21"/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>

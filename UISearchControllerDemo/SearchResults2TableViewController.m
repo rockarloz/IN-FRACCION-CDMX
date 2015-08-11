@@ -32,13 +32,13 @@
         cell = [[ConceptsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.concepto.text = [[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"descripcion"];
+    cell.concepto.text = [[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"descripcion"]capitalizedString];
     cell.concepto.numberOfLines=15;
     [cell.concepto sizeToFit];
     cell.concepto.frame=CGRectMake(10, 10, self.view.frame.size.width-20, cell.concepto.frame.size.height);
     
     cell.monto.frame=CGRectMake(cell.monto.frame.origin.x, cell.concepto.frame.size.height +cell.concepto.frame.origin.y+10, cell.monto.frame.size.width, cell.concepto.frame.size.height);
-    cell.monto.text=[NSString stringWithFormat:@"Monto: $%f", [[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
+    cell.monto.text=[NSString stringWithFormat:@"Monto: $%0.2f", [[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
      cell.monto.text=[NSString stringWithFormat:@"Artículo %@ fracción %@",[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"articulo"],[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"fraccion"]];
     [cell.monto sizeToFit];
     

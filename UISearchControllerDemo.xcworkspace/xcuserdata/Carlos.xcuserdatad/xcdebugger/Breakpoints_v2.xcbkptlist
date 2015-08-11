@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UISearchControllerDemo/ConceptosTableViewController.m"
-            timestampString = "459495573.402706"
+            timestampString = "460966530.702825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "-updateSearchResultsForSearchController:"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UISearchControllerDemo/ConceptosTableViewController.m"
-            timestampString = "457928728.86646"
+            timestampString = "460966530.702825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "-downloadData"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UISearchControllerDemo/ConceptosTableViewController.m"
-            timestampString = "459414857.816159"
+            timestampString = "460966530.702825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -144,6 +144,22 @@
             startingLineNumber = "372"
             endingLineNumber = "372"
             landmarkName = "-makeURL"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UISearchControllerDemo/ConceptDescriptionViewController.m"
+            timestampString = "460967799.950461"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-CreateElements"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -19,6 +19,7 @@
 		078CCD391B621C3100BB314B /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078CCD351B621C2700BB314B /* OpenSans-BoldItalic.ttf */; };
 		078CCD3C1B621C5700BB314B /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078CCD3A1B621C5700BB314B /* OpenSans-Regular.ttf */; };
 		078CCD3D1B621C5700BB314B /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078CCD3B1B621C5700BB314B /* OpenSans-Semibold.ttf */; };
+		07A316FF1B79C75400A9077D /* ConceptDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A316FE1B79C75400A9077D /* ConceptDescriptionViewController.m */; };
 		07B020E61B4B73420039BFE3 /* Refresh_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B020E51B4B73420039BFE3 /* Refresh_icon.png */; };
 		07E88B6F1B3769A70024096E /* ConceptsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E88B6E1B3769A70024096E /* ConceptsTableViewCell.m */; };
 		07FA0A5A1B2FC81800D63741 /* SearchResults2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FA0A591B2FC81800D63741 /* SearchResults2TableViewController.m */; };
@@ -31,6 +32,7 @@
 		31433FA41A6580E300E3420B /* UISearchControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433FA31A6580E300E3420B /* UISearchControllerDemoTests.m */; };
 		31433FB11A65837200E3420B /* AirlineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433FB01A65837200E3420B /* AirlineTableViewController.m */; };
 		31433FB41A658BFF00E3420B /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433FB31A658BFF00E3420B /* SearchResultsTableViewController.m */; };
+		F399BEB71B740A5400FFF6FC /* citydevs.png in Resources */ = {isa = PBXBuildFile; fileRef = F399BEB61B740A5400FFF6FC /* citydevs.png */; };
 		F3EE12861B019F1900CDEC6A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12851B019F1900CDEC6A /* ViewController.m */; };
 		F3EE128F1B01C50F00CDEC6A /* ConceptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */; };
 		F3EE12941B03E10800CDEC6A /* ConceptosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */; };
@@ -61,6 +63,8 @@
 		078CCD351B621C2700BB314B /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		078CCD3A1B621C5700BB314B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		078CCD3B1B621C5700BB314B /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		07A316FD1B79C75400A9077D /* ConceptDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptDescriptionViewController.h; sourceTree = "<group>"; };
+		07A316FE1B79C75400A9077D /* ConceptDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptDescriptionViewController.m; sourceTree = "<group>"; };
 		07B020E51B4B73420039BFE3 /* Refresh_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh_icon.png; sourceTree = "<group>"; };
 		07E88B6D1B3769A70024096E /* ConceptsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConceptsTableViewCell.h; path = UISearchControllerDemo/ConceptsTableViewCell.h; sourceTree = "<group>"; };
 		07E88B6E1B3769A70024096E /* ConceptsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConceptsTableViewCell.m; path = UISearchControllerDemo/ConceptsTableViewCell.m; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 		31433FB21A658BFF00E3420B /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
 		31433FB31A658BFF00E3420B /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		72132893E7A25F1ED5820B41 /* Pods-UISearchControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISearchControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-UISearchControllerDemo/Pods-UISearchControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F399BEB61B740A5400FFF6FC /* citydevs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citydevs.png; sourceTree = "<group>"; };
 		F3EE12841B019F1900CDEC6A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F3EE12851B019F1900CDEC6A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F3EE128D1B01C50F00CDEC6A /* ConceptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptsViewController.h; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 		31433F7B1A6580E200E3420B = {
 			isa = PBXGroup;
 			children = (
+				F399BEB61B740A5400FFF6FC /* citydevs.png */,
 				078CCD3A1B621C5700BB314B /* OpenSans-Regular.ttf */,
 				078CCD3B1B621C5700BB314B /* OpenSans-Semibold.ttf */,
 				078CCD341B621C2700BB314B /* OpenSans-Bold.ttf */,
@@ -170,6 +176,8 @@
 				31433FB21A658BFF00E3420B /* SearchResultsTableViewController.h */,
 				31433FB31A658BFF00E3420B /* SearchResultsTableViewController.m */,
 				31433F911A6580E200E3420B /* Main.storyboard */,
+				07A316FD1B79C75400A9077D /* ConceptDescriptionViewController.h */,
+				07A316FE1B79C75400A9077D /* ConceptDescriptionViewController.m */,
 				F3EE12921B03E10800CDEC6A /* ConceptosTableViewController.h */,
 				F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */,
 				07FA0A581B2FC81800D63741 /* SearchResults2TableViewController.h */,
@@ -325,6 +333,7 @@
 				07B020E61B4B73420039BFE3 /* Refresh_icon.png in Resources */,
 				31433F951A6580E200E3420B /* Images.xcassets in Resources */,
 				0739C4EB1B4E3B6F006BE240 /* no.png in Resources */,
+				F399BEB71B740A5400FFF6FC /* citydevs.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +396,7 @@
 				07E88B6F1B3769A70024096E /* ConceptsTableViewCell.m in Sources */,
 				F3EE128F1B01C50F00CDEC6A /* ConceptsViewController.m in Sources */,
 				31433FB11A65837200E3420B /* AirlineTableViewController.m in Sources */,
+				07A316FF1B79C75400A9077D /* ConceptDescriptionViewController.m in Sources */,
 				F3EE12861B019F1900CDEC6A /* ViewController.m in Sources */,
 				F3EE12991B06856C00CDEC6A /* AgenteTableViewCell.m in Sources */,
 				07567D401B0B0711007E6B3A /* DescriptionViewController.m in Sources */,

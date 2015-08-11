@@ -9,6 +9,7 @@
 #import "ConceptosTableViewController.h"
 #import "SearchResults2TableViewController.h"
 #import <AFHTTPRequestOperationManager.h>
+#import "ConceptDescriptionViewController.h"
 
 @interface ConceptosTableViewController () <UISearchResultsUpdating>
 
@@ -194,7 +195,7 @@
         cell = [[ConceptsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.concepto.text = [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"descripcion"];
+    cell.concepto.text = [[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"descripcion"]capitalizedString];
     cell.concepto.numberOfLines=15;
     [cell.concepto sizeToFit];
     cell.concepto.frame=CGRectMake(10, 10, self.view.frame.size.width-20, cell.concepto.frame.size.height);
@@ -210,7 +211,7 @@
     }
     else
     cell.corralon.text=[NSString stringWithFormat:@"Amerita corralón: %@", [[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"corralon"]];
-    cell.corralon.text=[NSString stringWithFormat:@"$%f", [[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
+    cell.corralon.text=[NSString stringWithFormat:@"$%0.2f", [[[self.conceptos objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
     
     [cell.corralon sizeToFit];
     
@@ -311,7 +312,12 @@
     self.navigationController.navigationBar.backItem.title=@"";
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ConceptDescriptionViewController *des=[[ConceptDescriptionViewController alloc]init];
+    des.data=[self.conceptos objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:des animated:NO];
+    
+}
 
 
 @end
