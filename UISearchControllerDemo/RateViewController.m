@@ -61,7 +61,7 @@
     _pagecontrol=[[UIPageControl alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-40, self.view.frame.size.height-20, 80, 10)];
     _pagecontrol.tintColor=[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
     _pagecontrol.pageIndicatorTintColor =[UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
-    _pagecontrol.currentPageIndicatorTintColor = [UIColor greenColor];
+    _pagecontrol.currentPageIndicatorTintColor = [UIColor yellowColor];
     _pagecontrol.backgroundColor=[UIColor clearColor];
 
     
