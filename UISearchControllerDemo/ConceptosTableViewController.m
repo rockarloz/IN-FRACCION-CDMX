@@ -86,6 +86,7 @@
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.searchController.searchBar.placeholder=@"Busca tu infracción";
     self.searchController.searchBar.barTintColor =  [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
+    self.searchController.searchBar.tintColor=[UIColor whiteColor];
     
     self.searchController.searchBar.backgroundColor =  [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
 
@@ -274,6 +275,9 @@
                 [data setObject:plt forKey:@"articulo"];
                 [data setObject:dias forKey:@"dias_sansion"];
                 [data setObject:dias1 forKey:@"fraccion"];
+                [data setObject:airline[@"puntos"] forKey:@"puntos"];
+                [data setObject:airline[@"corralon"] forKey:@"corralon"];
+                
                 [searchResults addObject:data];
 
                 

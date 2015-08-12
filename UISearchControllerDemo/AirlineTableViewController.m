@@ -79,6 +79,7 @@
     self.searchController.searchBar.barTintColor = [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
     self.searchController.searchBar.backgroundColor = [UIColor colorWithRed:53/255.0 green:175/255.0 blue:202/255.0 alpha:1];
     self.searchController.searchBar.tintColor= [UIColor whiteColor];
+      self.searchController.searchBar.tintColor=[UIColor whiteColor];
     self.searchController.delegate=self;
     self.tableView.tableHeaderView = self.searchController.searchBar;
 

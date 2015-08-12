@@ -8,6 +8,7 @@
 
 #import "SearchResults2TableViewController.h"
 #import "ConceptsTableViewCell.h"
+#import "ConceptDescriptionViewController.h"
 @interface SearchResults2TableViewController ()
 @property (nonatomic, strong) NSArray *array;
 @end
@@ -49,7 +50,7 @@
     else
         cell.corralon.text=[NSString stringWithFormat:@"Amerita corralón: %@", [[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"corralon"]];
     
-    cell.corralon.text=[NSString stringWithFormat:@"$%f", [[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
+    cell.corralon.text=[NSString stringWithFormat:@"$%0.2f", [[[self.searchResults objectAtIndex:indexPath.row] objectForKey:@"dias_sansion"] integerValue] *69.90];
     
     
     [cell.corralon sizeToFit];
@@ -78,6 +79,18 @@
     
     return height + (10 * 8.5);
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ConceptDescriptionViewController *des=[[ConceptDescriptionViewController alloc]init];
+    des.data=[self.searchResults objectAtIndex:indexPath.row];
+    des.from=@"search";
+    // debo de hacer un nuevo navigation controller
+    
+    UINavigationController *auxNav=[[UINavigationController alloc]initWithRootViewController:des];
+    
+    // UIWindow* currentWindow = [UIApplication sharedApplication].keyWindow;
+    //[self.navigationController pushViewController:des  animated:NO];
+    
+    [self presentViewController:auxNav animated:NO completion:nil];
+}
 
 @end

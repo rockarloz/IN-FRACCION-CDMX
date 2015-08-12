@@ -20,21 +20,21 @@
     // Do any additional setup after loading the view.
 }
 -(void)CreateElements{
-    description=[[UILabel alloc]initWithFrame:CGRectMake(15, 70, self.view.frame.size.width-30, 50)];
+    description=[[UILabel alloc]initWithFrame:CGRectMake(15, 90, self.view.frame.size.width-30, 50)];
     description.numberOfLines=15;
     description.text =[[_data objectForKey:@"descripcion"]capitalizedString];
     [description setFont:[UIFont fontWithName:@"OpenSans-Bold" size:17]];
     [description sizeToFit];
     [self.view addSubview:description];
 
-    article=[[UILabel alloc]initWithFrame:CGRectMake(15, description.frame.size.height+description.frame.origin.y+5, self.view.frame.size.width-30, 50)];
+    article=[[UILabel alloc]initWithFrame:CGRectMake(15, description.frame.size.height+description.frame.origin.y+10, self.view.frame.size.width-30, 50)];
     article.text=[NSString stringWithFormat:@"Artículo %@ fracción %@",[_data objectForKey:@"articulo"],[_data objectForKey:@"fraccion"]];
     [article setFont:[UIFont fontWithName:@"OpenSans-Semibold" size:14]];
     article.textColor=[UIColor darkGrayColor];
     [article sizeToFit];
     [self.view addSubview:article];
 
-    corralon=[[UILabel alloc]initWithFrame:CGRectMake(15, article.frame.size.height+article.frame.origin.y+5, self.view.frame.size.width-30, 50)];
+    corralon=[[UILabel alloc]initWithFrame:CGRectMake(15, article.frame.size.height+article.frame.origin.y+10, self.view.frame.size.width-30, 50)];
     if ([[_data objectForKey:@"corralon"] isEqualToString:@""]) {
         corralon.text=@"Corralón: NO";
     }
@@ -45,7 +45,7 @@
     [corralon sizeToFit];
     [self.view addSubview:corralon];
     
-     points=[[UILabel alloc]initWithFrame:CGRectMake(15, corralon.frame.size.height+corralon.frame.origin.y+5, self.view.frame.size.width-30, 50)];
+     points=[[UILabel alloc]initWithFrame:CGRectMake(15, corralon.frame.size.height+corralon.frame.origin.y+10, self.view.frame.size.width-30, 50)];
     points.text =[NSString stringWithFormat:@"%@ punto(s) de licencia",[_data objectForKey:@"puntos"]];
     [points setFont:[UIFont fontWithName:@"OpenSans-Semibold" size:14]];
     [points sizeToFit];
