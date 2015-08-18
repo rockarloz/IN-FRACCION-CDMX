@@ -38,7 +38,7 @@
              dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [urlData writeToFile:filePath atomically:YES];
                 NSLog(@"File Saved !");
-                 UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Lista Descagarda" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+                 UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Lista Actualizada" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
                  [a show];
                 [self search];
             });

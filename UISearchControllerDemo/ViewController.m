@@ -21,7 +21,7 @@
 }
 - (void)viewDidLoad {
      [super viewDidLoad];
-    
+    self.navigationController.topViewController.navigationItem.title=@"";
     UIButton *search =  [UIButton buttonWithType:UIButtonTypeInfoLight];
     //[search setImage:[UIImage imageNamed:@"df.png"] forState:UIControlStateNormal];
     [search addTarget:self action:@selector(gotoAbout) forControlEvents:UIControlEventTouchUpInside];

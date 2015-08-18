@@ -26,7 +26,8 @@
     
     //text.text=@"In/Fracción es una app que te permite consultar, evaluar y conocer el proceso de infracción según la información oficial brindada por la Secretaría de Seguridad Pública de la Ciudad de México.\n * Si un agente de tránsito te detiene, puedes consultar su nombre o número de placa y saber si tiene la facultad para levantar una infracción. \n * Si cometiste una infracción evalúa el proceso que el agente siguió en base al artículo 39 del Reglamento de Tránsito Metropolitano. \n * Consulta el monto total y las sanciones que debes pagar por la infracción que cometiste.";
     [text setFont:[UIFont fontWithName:@"OpenSans-Semibold" size:15]];
-
+    text.editable = NO;
+    text.dataDetectorTypes = UIDataDetectorTypeAll;
     [self.view addSubview:text];
     
     
