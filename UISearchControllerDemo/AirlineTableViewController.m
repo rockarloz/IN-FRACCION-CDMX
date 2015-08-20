@@ -57,7 +57,7 @@
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"policias.json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    NSMutableArray *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     self.airlines = dict;
     
     // There's no transition in our storyboard to our search results tableview or navigation controller
@@ -106,7 +106,7 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString* foofile = [documentsDirectory stringByAppendingPathComponent:@"policias.json"];
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:foofile];
-   
+    [self loadData];
     if (fileExists) {
          [self search];
     }else
@@ -115,7 +115,17 @@
     [super viewDidLoad];
     
     }
+-(void)loadData{
 
+
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"policias" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSError *error;
+    NSMutableArray *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    self.airlines = dict;
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -134,6 +144,7 @@
     AgenteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Airline" forIndexPath:indexPath];
     cell.nombre.text = [[[self.airlines objectAtIndex:indexPath.row] objectForKey:@"nombre_completo"] capitalizedString];
     cell.nombre.numberOfLines=2;
+    [cell.nombre sizeToFit ];
     cell.placa.text = [NSString stringWithFormat:@"Placa:%@",[[self.airlines objectAtIndex:indexPath.row] objectForKey:@"placa"] ];
     
     return cell;

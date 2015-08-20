@@ -53,14 +53,24 @@
 -(void)UpdateData{
     [self downloadData];
 }
-
+-(void)loadData{
+    
+    
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"conceptos" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSError *error;
+    NSMutableArray *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    self.conceptos = dict;
+    
+}
 -(void)search{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"conceptos.json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    NSMutableArray *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     self.conceptos = dict;
     
     // There's no transition in our storyboard to our search results tableview or navigation controller
@@ -119,7 +129,7 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString* foofile = [documentsDirectory stringByAppendingPathComponent:@"conceptos.json"];
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:foofile];
-    
+    [self loadData];
     if (fileExists) {
         [self search];
     }else

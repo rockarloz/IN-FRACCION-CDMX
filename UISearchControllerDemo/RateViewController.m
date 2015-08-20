@@ -24,12 +24,14 @@
     int documentos;
     int copia;
     UIActivityIndicatorView *loading;
+    BOOL working;
 }
 - (void)viewDidLoad {
+    working=FALSE;
     paginas=6;
     loading=[[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-25, self.view.frame.size.height/2-25, 50, 50)];
     loading.backgroundColor=[UIColor blackColor];
-    
+    loading.layer.cornerRadius = 5;
     UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(10, 74, self.view.frame.size.width-20, 100)];
     name.text=_name;
     name.numberOfLines=3;
@@ -368,14 +370,26 @@
 
 -(void)makeURL{
 
- 
+ if (working)
+ {
+     NSLog(@"aguanta trabajando");
+ }
+ else{
+     working=TRUE;
     [loading startAnimating];
  
     NSString *url=[NSString stringWithFormat:@"http://infracciones.herokuapp.com//cops/new?identification=%i&infraccion=%i&articulo=%i&coincidio=%i&documents=%i&copy=%i&latitude=19.4394829&longitude=-99.1823385&cop_id=830625",identificacion,infraccion,articulo,coincidio,documentos,coincidio];
     NSLog(@"%@",url);
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:url parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
         
+        
+       
+working=FALSE;
+   
+                 
         [loading stopAnimating];
         loading.hidden=TRUE;
         for (NSDictionary *item in responseObject) {
@@ -400,8 +414,10 @@
         [a show];
         [loading stopAnimating];
         loading.hidden=TRUE;
+             working=FALSE;
         
     }];
+ }
     
 }
 

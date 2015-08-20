@@ -37,6 +37,8 @@
 		F3EE128F1B01C50F00CDEC6A /* ConceptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */; };
 		F3EE12941B03E10800CDEC6A /* ConceptosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */; };
 		F3EE12991B06856C00CDEC6A /* AgenteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12981B06856C00CDEC6A /* AgenteTableViewCell.m */; };
+		F3EEF9761B8687FC00C662A9 /* policias.json in Resources */ = {isa = PBXBuildFile; fileRef = F3EEF9751B8687FC00C662A9 /* policias.json */; };
+		F3EEF9781B8689D100C662A9 /* conceptos.json in Resources */ = {isa = PBXBuildFile; fileRef = F3EEF9771B8689D100C662A9 /* conceptos.json */; };
 		F92635343E2B2D2908699650 /* libPods-UISearchControllerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDE80008C2D10C245B71B7A /* libPods-UISearchControllerDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,8 @@
 		F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptosTableViewController.m; sourceTree = "<group>"; };
 		F3EE12971B06856C00CDEC6A /* AgenteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgenteTableViewCell.h; sourceTree = "<group>"; };
 		F3EE12981B06856C00CDEC6A /* AgenteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgenteTableViewCell.m; sourceTree = "<group>"; };
+		F3EEF9751B8687FC00C662A9 /* policias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = policias.json; sourceTree = "<group>"; };
+		F3EEF9771B8689D100C662A9 /* conceptos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = conceptos.json; sourceTree = "<group>"; };
 		FCDE80008C2D10C245B71B7A /* libPods-UISearchControllerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UISearchControllerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,6 +127,8 @@
 		0739C4E81B4E3B07006BE240 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F3EEF9751B8687FC00C662A9 /* policias.json */,
+				F3EEF9771B8689D100C662A9 /* conceptos.json */,
 				07B020E51B4B73420039BFE3 /* Refresh_icon.png */,
 				0739C4F31B4F76D3006BE240 /* atras.png */,
 				0739C4E61B4E3AF2006BE240 /* logo.png */,
@@ -323,9 +329,11 @@
 			files = (
 				078CCD3D1B621C5700BB314B /* OpenSans-Semibold.ttf in Resources */,
 				31433F931A6580E200E3420B /* Main.storyboard in Resources */,
+				F3EEF9781B8689D100C662A9 /* conceptos.json in Resources */,
 				078CCD3C1B621C5700BB314B /* OpenSans-Regular.ttf in Resources */,
 				0739C4EC1B4E3B6F006BE240 /* si.png in Resources */,
 				31433F981A6580E200E3420B /* LaunchScreen.xib in Resources */,
+				F3EEF9761B8687FC00C662A9 /* policias.json in Resources */,
 				0739C4E71B4E3AF2006BE240 /* logo.png in Resources */,
 				078CCD371B621C2700BB314B /* OpenSans-BoldItalic.ttf in Resources */,
 				0739C4F41B4F76D3006BE240 /* atras.png in Resources */,

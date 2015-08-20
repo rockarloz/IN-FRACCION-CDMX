@@ -32,9 +32,9 @@
         float a= [[UIScreen mainScreen] bounds].size.width;
         NSLog(@"%f",a);
         _nombre = [[UILabel alloc] initWithFrame:CGRectMake(15,0,a-30,200)];
-        _nombre.numberOfLines=2;
+        _nombre.numberOfLines=3;
          [_nombre setFont:[UIFont fontWithName:@"OpenSans-Bold" size:17]];
-        _placa= [[UILabel alloc] initWithFrame:CGRectMake(15,200,a-30,100)];
+        _placa= [[UILabel alloc] initWithFrame:CGRectMake(15,2,a-30,100)];
         
         
         [self addSubview:_nombre];
