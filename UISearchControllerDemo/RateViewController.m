@@ -23,10 +23,13 @@
     int coincidio;
     int documentos;
     int copia;
+    UIActivityIndicatorView *loading;
 }
 - (void)viewDidLoad {
     paginas=6;
-   
+    loading=[[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2-25, self.view.frame.size.height/2-25, 50, 50)];
+    loading.backgroundColor=[UIColor blackColor];
+    
     UILabel *name=[[UILabel alloc]initWithFrame:CGRectMake(10, 74, self.view.frame.size.width-20, 100)];
     name.text=_name;
     name.numberOfLines=3;
@@ -293,6 +296,7 @@
     [self.view addSubview:scroll];
     
     [self.view addSubview:_pagecontrol];
+      [self.view addSubview:loading];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -364,11 +368,16 @@
 
 -(void)makeURL{
 
+ 
+    [loading startAnimating];
+ 
     NSString *url=[NSString stringWithFormat:@"http://infracciones.herokuapp.com//cops/new?identification=%i&infraccion=%i&articulo=%i&coincidio=%i&documents=%i&copy=%i&latitude=19.4394829&longitude=-99.1823385&cop_id=830625",identificacion,infraccion,articulo,coincidio,documentos,coincidio];
     NSLog(@"%@",url);
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
         
+        [loading stopAnimating];
+        loading.hidden=TRUE;
         for (NSDictionary *item in responseObject) {
           
        
@@ -389,6 +398,8 @@
        
         UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Error al enviar tu evaluación" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
         [a show];
+        [loading stopAnimating];
+        loading.hidden=TRUE;
         
     }];
     
