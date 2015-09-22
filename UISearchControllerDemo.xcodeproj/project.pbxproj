@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070E999A1BAFB62800BFD7FF /* boton.png in Resources */ = {isa = PBXBuildFile; fileRef = 070E99991BAFB62800BFD7FF /* boton.png */; settings = {ASSET_TAGS = (); }; };
 		0739C4E71B4E3AF2006BE240 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0739C4E61B4E3AF2006BE240 /* logo.png */; };
 		0739C4EB1B4E3B6F006BE240 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 0739C4E91B4E3B6F006BE240 /* no.png */; };
 		0739C4EC1B4E3B6F006BE240 /* si.png in Resources */ = {isa = PBXBuildFile; fileRef = 0739C4EA1B4E3B6F006BE240 /* si.png */; };
@@ -19,6 +20,8 @@
 		078CCD391B621C3100BB314B /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078CCD351B621C2700BB314B /* OpenSans-BoldItalic.ttf */; };
 		078CCD3C1B621C5700BB314B /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078CCD3A1B621C5700BB314B /* OpenSans-Regular.ttf */; };
 		078CCD3D1B621C5700BB314B /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078CCD3B1B621C5700BB314B /* OpenSans-Semibold.ttf */; };
+		0796E3971BAF7981005C7A08 /* gorra.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796E3951BAF7981005C7A08 /* gorra.png */; settings = {ASSET_TAGS = (); }; };
+		0796E3981BAF7981005C7A08 /* infraccion.png in Resources */ = {isa = PBXBuildFile; fileRef = 0796E3961BAF7981005C7A08 /* infraccion.png */; settings = {ASSET_TAGS = (); }; };
 		07A316FF1B79C75400A9077D /* ConceptDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A316FE1B79C75400A9077D /* ConceptDescriptionViewController.m */; };
 		07B020E61B4B73420039BFE3 /* Refresh_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B020E51B4B73420039BFE3 /* Refresh_icon.png */; };
 		07E88B6F1B3769A70024096E /* ConceptsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E88B6E1B3769A70024096E /* ConceptsTableViewCell.m */; };
@@ -53,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070E99991BAFB62800BFD7FF /* boton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boton.png; sourceTree = "<group>"; };
 		0739C4E61B4E3AF2006BE240 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = UISearchControllerDemo/logo.png; sourceTree = "<group>"; };
 		0739C4E91B4E3B6F006BE240 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
 		0739C4EA1B4E3B6F006BE240 /* si.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = si.png; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		078CCD351B621C2700BB314B /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		078CCD3A1B621C5700BB314B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		078CCD3B1B621C5700BB314B /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		0796E3951BAF7981005C7A08 /* gorra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gorra.png; sourceTree = "<group>"; };
+		0796E3961BAF7981005C7A08 /* infraccion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infraccion.png; sourceTree = "<group>"; };
 		07A316FD1B79C75400A9077D /* ConceptDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptDescriptionViewController.h; sourceTree = "<group>"; };
 		07A316FE1B79C75400A9077D /* ConceptDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptDescriptionViewController.m; sourceTree = "<group>"; };
 		07B020E51B4B73420039BFE3 /* Refresh_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh_icon.png; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				F399BEB61B740A5400FFF6FC /* citydevs.png */,
+				0796E3951BAF7981005C7A08 /* gorra.png */,
+				0796E3961BAF7981005C7A08 /* infraccion.png */,
 				078CCD3A1B621C5700BB314B /* OpenSans-Regular.ttf */,
 				078CCD3B1B621C5700BB314B /* OpenSans-Semibold.ttf */,
 				078CCD341B621C2700BB314B /* OpenSans-Bold.ttf */,
@@ -194,6 +202,7 @@
 				F3EE12851B019F1900CDEC6A /* ViewController.m */,
 				07FA0A5B1B2FD27700D63741 /* AboutViewController.h */,
 				07FA0A5C1B2FD27700D63741 /* AboutViewController.m */,
+				070E99991BAFB62800BFD7FF /* boton.png */,
 				31433F941A6580E200E3420B /* Images.xcassets */,
 				31433F961A6580E200E3420B /* LaunchScreen.xib */,
 				31433F871A6580E200E3420B /* Supporting Files */,
@@ -329,11 +338,14 @@
 			files = (
 				078CCD3D1B621C5700BB314B /* OpenSans-Semibold.ttf in Resources */,
 				31433F931A6580E200E3420B /* Main.storyboard in Resources */,
+				070E999A1BAFB62800BFD7FF /* boton.png in Resources */,
 				F3EEF9781B8689D100C662A9 /* conceptos.json in Resources */,
 				078CCD3C1B621C5700BB314B /* OpenSans-Regular.ttf in Resources */,
 				0739C4EC1B4E3B6F006BE240 /* si.png in Resources */,
+				0796E3981BAF7981005C7A08 /* infraccion.png in Resources */,
 				31433F981A6580E200E3420B /* LaunchScreen.xib in Resources */,
 				F3EEF9761B8687FC00C662A9 /* policias.json in Resources */,
+				0796E3971BAF7981005C7A08 /* gorra.png in Resources */,
 				0739C4E71B4E3AF2006BE240 /* logo.png in Resources */,
 				078CCD371B621C2700BB314B /* OpenSans-BoldItalic.ttf in Resources */,
 				0739C4F41B4F76D3006BE240 /* atras.png in Resources */,

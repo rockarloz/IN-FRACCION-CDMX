@@ -112,7 +112,6 @@
     }else
     [self downloadData];
    // http://201.144.220.174/infracciones/api/personal/acreditado
-    [super viewDidLoad];
     
     }
 -(void)loadData{

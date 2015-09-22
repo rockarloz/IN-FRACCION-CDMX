@@ -103,7 +103,7 @@
     
 }
 - (void)viewDidLoad {
-    [super viewDidLoad];
+ 
     
     
     UIButton *search =  [UIButton buttonWithType:UIButtonTypeCustom];
