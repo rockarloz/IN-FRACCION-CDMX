@@ -37,7 +37,6 @@
 		31433FB41A658BFF00E3420B /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433FB31A658BFF00E3420B /* SearchResultsTableViewController.m */; };
 		F399BEB71B740A5400FFF6FC /* citydevs.png in Resources */ = {isa = PBXBuildFile; fileRef = F399BEB61B740A5400FFF6FC /* citydevs.png */; };
 		F3EE12861B019F1900CDEC6A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12851B019F1900CDEC6A /* ViewController.m */; };
-		F3EE128F1B01C50F00CDEC6A /* ConceptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */; };
 		F3EE12941B03E10800CDEC6A /* ConceptosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */; };
 		F3EE12991B06856C00CDEC6A /* AgenteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EE12981B06856C00CDEC6A /* AgenteTableViewCell.m */; };
 		F3EEF9761B8687FC00C662A9 /* policias.json in Resources */ = {isa = PBXBuildFile; fileRef = F3EEF9751B8687FC00C662A9 /* policias.json */; };
@@ -100,8 +99,6 @@
 		F399BEB61B740A5400FFF6FC /* citydevs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citydevs.png; sourceTree = "<group>"; };
 		F3EE12841B019F1900CDEC6A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F3EE12851B019F1900CDEC6A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F3EE128D1B01C50F00CDEC6A /* ConceptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptsViewController.h; sourceTree = "<group>"; };
-		F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptsViewController.m; sourceTree = "<group>"; };
 		F3EE12921B03E10800CDEC6A /* ConceptosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConceptosTableViewController.h; sourceTree = "<group>"; };
 		F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConceptosTableViewController.m; sourceTree = "<group>"; };
 		F3EE12971B06856C00CDEC6A /* AgenteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgenteTableViewCell.h; sourceTree = "<group>"; };
@@ -196,8 +193,6 @@
 				F3EE12931B03E10800CDEC6A /* ConceptosTableViewController.m */,
 				07FA0A581B2FC81800D63741 /* SearchResults2TableViewController.h */,
 				07FA0A591B2FC81800D63741 /* SearchResults2TableViewController.m */,
-				F3EE128D1B01C50F00CDEC6A /* ConceptsViewController.h */,
-				F3EE128E1B01C50F00CDEC6A /* ConceptsViewController.m */,
 				F3EE12841B019F1900CDEC6A /* ViewController.h */,
 				F3EE12851B019F1900CDEC6A /* ViewController.m */,
 				07FA0A5B1B2FD27700D63741 /* AboutViewController.h */,
@@ -414,7 +409,6 @@
 				31433F8A1A6580E200E3420B /* main.m in Sources */,
 				07FA0A5D1B2FD27700D63741 /* AboutViewController.m in Sources */,
 				07E88B6F1B3769A70024096E /* ConceptsTableViewCell.m in Sources */,
-				F3EE128F1B01C50F00CDEC6A /* ConceptsViewController.m in Sources */,
 				31433FB11A65837200E3420B /* AirlineTableViewController.m in Sources */,
 				07A316FF1B79C75400A9077D /* ConceptDescriptionViewController.m in Sources */,
 				F3EE12861B019F1900CDEC6A /* ViewController.m in Sources */,

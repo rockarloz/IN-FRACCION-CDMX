@@ -131,13 +131,51 @@
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:foofile];
     [self loadData];
     if (fileExists) {
-        [self search];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        
+        // OS X 10.5+
+        NSArray *paths1 = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory1 = [paths1 objectAtIndex:0];
+        NSString *path1 = [documentsDirectory1 stringByAppendingPathComponent:@"conceptos.json"];
+        
+        NSLog(@"%@", [[fm attributesOfItemAtPath:path1 error:NULL] fileModificationDate]);
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"dd-MM-YYYY"];
+        NSDate *todaysDate;
+        todaysDate = [[fm attributesOfItemAtPath:path1 error:NULL] fileModificationDate];
+        NSLog(@"Todays date is %@",[formatter stringFromDate:todaysDate]);
+        
+        
+        [fm setAttributes:[NSDictionary dictionaryWithObject:[NSDate date] forKey:NSFileModificationDate]
+             ofItemAtPath:path1 error:NULL];
+        
+        UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:[NSString stringWithFormat:@"La lista se actualizó por última vez en %@ , te sugerimos actualizarla  nuevamente.",[formatter stringFromDate:todaysDate]] delegate:self cancelButtonTitle:@"Actualizar Ahora" otherButtonTitles:@"Actualizar después", nil];
+        [a show];
+        
     }else
-        [self downloadData];
+    {
+        UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:@"Hay una nueva lista actualizada, se iniciará la descarga automáticamente" delegate:self cancelButtonTitle:@"Actualizar Ahora" otherButtonTitles:nil, nil];
+        [a show];
+    }
     
-    
-    //[self getData];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([title isEqualToString:@"Actualizar Ahora"])
+    {
+        [self downloadData];
+    }
+    else if([title isEqualToString:@"Aceptar"])
+    {
+        NSLog(@"Button 2 was selected.");
+    }
+    else if([title isEqualToString:@"Actualizar después"])
+    {
+        NSLog(@"Button 3 was selected.");
+    }}
 -(void)getData{
     _conceptos=[[NSMutableArray alloc]init];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

@@ -20,12 +20,10 @@
     [self.navigationController pushViewController:about animated:YES];
 }
 - (void)viewDidLoad {
-     [super viewDidLoad];
+    
     self.navigationController.topViewController.navigationItem.title=@"Infracción";
     UIButton *search =  [UIButton buttonWithType:UIButtonTypeInfoLight];
-    //[search setImage:[UIImage imageNamed:@"df.png"] forState:UIControlStateNormal];
     [search addTarget:self action:@selector(gotoAbout) forControlEvents:UIControlEventTouchUpInside];
-    
     [search setFrame:CGRectMake(0, 0, 25 , 25)];
     UIBarButtonItem *buscar = [[UIBarButtonItem alloc]initWithCustomView:search];
     NSMutableArray *as=[[NSMutableArray alloc]initWithObjects:buscar, nil];
@@ -85,13 +83,6 @@
     button2.tintColor=[UIColor blackColor];
     button2.layer.cornerRadius = 8.0f;
     button2.layer.masksToBounds = YES;
-   /* UIImage *buttonImagePressed = [UIImage imageNamed:@"boton.png"];
-    UIImage *strechableButtonImagePressed = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-    
-    [button2 setBackgroundImage:strechableButtonImagePressed forState:UIControlStateNormal];
-    */
-    //button.layer.borderWidth = 1.0f;
-    
     button2.layer.shadowColor = [UIColor clearColor].CGColor;
     button2.layer.shadowOpacity = 0.8;
     button2.layer.shadowRadius = 12;
@@ -188,15 +179,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(IBAction)goToConcepts:(id)sender
-{
-    
-    
-    
-    
-    ConceptosTableViewController *list=[[ConceptosTableViewController alloc]init];
-    [self.navigationController pushViewController:list animated:YES];
-}
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.navigationController.topViewController.navigationItem.title=@"Infracción";

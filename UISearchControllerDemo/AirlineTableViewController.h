@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AirlineTableViewController : UITableViewController <UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface AirlineTableViewController : UITableViewController <UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate>
 
 @end

@@ -57,6 +57,8 @@
     lbl.textColor=[UIColor blackColor];
       [lbl setFont:[UIFont fontWithName:@"OpenSans-Bold" size:16]];
     [btn addSubview:lbl];
+    btn.layer.cornerRadius = 8.0f;
+    btn.layer.masksToBounds = YES;
     [self.view addSubview:btn];
     
     
