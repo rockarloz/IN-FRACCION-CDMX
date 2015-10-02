@@ -91,7 +91,8 @@
     return NO;
 }
 - (void)viewDidLoad {
-    
+    [self search];
+
     UIButton *search =  [UIButton buttonWithType:UIButtonTypeCustom];
      search.tintColor=[UIColor whiteColor];
     [search setImage:[UIImage imageNamed:@"Refresh_icon.png"] forState:UIControlStateNormal];
