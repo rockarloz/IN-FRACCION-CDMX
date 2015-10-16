@@ -49,7 +49,7 @@
     UIImageView *logo2=[[UIImageView alloc]initWithFrame:CGRectMake(25, text.frame.size.height+text.frame.origin.y+5, self.view.frame.size.width-50, 50)];
     logo2.image=[UIImage imageNamed:@"logosdf.png"];
     [self.view addSubview:logo2];
-    
+    logo2.contentMode=UIViewContentModeScaleAspectFit;
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated{

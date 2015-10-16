@@ -151,8 +151,20 @@
         [fm setAttributes:[NSDictionary dictionaryWithObject:[NSDate date] forKey:NSFileModificationDate]
              ofItemAtPath:path1 error:NULL];
         
-        UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:[NSString stringWithFormat:@"La lista se actualizó por última vez en %@ , te sugerimos actualizarla  nuevamente.",[formatter stringFromDate:todaysDate]] delegate:self cancelButtonTitle:@"Actualizar Ahora" otherButtonTitles:@"Actualizar después", nil];
-        [a show];
+        NSDate *today = [NSDate date];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd-MM-YYYY"];
+        NSString *dateString = [dateFormat stringFromDate:today];
+        NSLog(@"date: %@", dateString);
+        
+        if ([dateString isEqualToString:[formatter stringFromDate:todaysDate]]) {
+            NSLog(@"Hoy fue su ultima actualizacion ");
+        }
+        else {
+            UIAlertView *a=[[UIAlertView alloc]initWithTitle:@"Mensaje" message:[NSString stringWithFormat:@"La lista se actualizó por última vez en %@ , te sugerimos actualizarla  nuevamente.",[formatter stringFromDate:todaysDate]] delegate:self cancelButtonTitle:@"Actualizar Ahora" otherButtonTitles:@"Actualizar después", nil];
+            [a show];
+        }
+      
         
     }else
     {
